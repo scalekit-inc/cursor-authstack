@@ -1,57 +1,46 @@
 # Scalekit AuthStack for Cursor
 
-A marketplace of authentication-focused plugins for Cursor IDE, providing skills, agents, commands, and rules for OAuth, SSO, SCIM, MCP auth, and agent security.
+A Cursor plugin marketplace that brings production-ready authentication to your existing projects — right from inside Cursor.
 
-## Installation
+Pick the auth you need: MCP auth, SSO, SCIM provisioning, agent auth, or full-stack authentication — and let Cursor's agent do the wiring for you.
 
-Add this marketplace to Cursor:
+> 🚧 **Actively under development.** New plugins are shipping in the coming days. **MCP Auth is fully available today.**
 
-```
-/plugin marketplace add <your-repo-url>
-```
+---
 
 ## Plugins
 
-### mcp-auth
-OAuth 2.1 authorization for MCP servers. Skills for token handling, refresh flows, and scope management.
+| Plugin | What it does | Status |
+|--------|--------------|--------|
+| `mcp-auth` | OAuth 2.1 authorization for MCP servers — discovery endpoint, token validation, scope enforcement | ✅ Available |
+| `agent-auth` | Secure OAuth flows for AI agents and service-to-service communication | 🔜 Coming soon |
+| `fsa` | Full-stack web authentication — login pages, sessions, and protected routes | 🔜 Coming soon |
+| `modular-sso` | Enterprise SSO with 20+ identity providers (Okta, Entra ID, JumpCloud) via SAML/OIDC | 🔜 Coming soon |
+| `modular-scim` | SCIM 2.0 user provisioning and directory sync | 🔜 Coming soon |
 
-### agent-auth
-Secure authentication for AI agents and services. OAuth flows designed for AI agents with token persistence and service-to-service auth.
+---
 
-### fsa
-Full-stack web authentication setup. End-to-end auth including login pages, session management, and protected routes.
+## Installation
 
-### modular-sso
-Enterprise SSO integration. Support for 20+ identity providers (Okta, JumpCloud, Entra ID) with SAML/OIDC and JIT provisioning.
+The plugin bundle is currently **under review for the [Cursor Marketplace](https://cursor.com/marketplace)**. Once approved, you will be able to install it directly from the Cursor plugin panel in a single click.
 
-### modular-scim
-User provisioning and directory sync. SCIM 2.0 implementation with automatic schema mapping and sync automation.
+Until then, you can load it manually by cloning this repository into your workspace. See [Cursor's plugin documentation](https://cursor.com/docs/plugins) for how to configure and activate local plugins.
 
-## Structure
+---
 
-Each plugin follows Cursor's plugin structure:
-- `.cursor-plugin/plugin.json` - Plugin manifest
-- `skills/` - Agent capabilities (SKILL.md files)
-- `agents/` - Custom agent configurations
-- `commands/` - Agent-executable commands
-- `rules/` - Persistent guidance rules (.mdc files)
+## mcp-auth — Available Now
 
-## Development
+The `mcp-auth` plugin adds production-ready OAuth 2.1 authorization to any MCP server. Once installed, Cursor's agent will:
 
-1. Edit plugin manifests in `plugins/*/.cursor-plugin/plugin.json`
-2. Add skills in `plugins/*/skills/*/SKILL.md`
-3. Add agents in `plugins/*/agents/*.md`
-4. Add commands in `plugins/*/commands/*.md`
-5. Add rules in `plugins/*/rules/*.mdc`
+- Serve a `/.well-known/oauth-protected-resource` discovery endpoint so MCP clients (Claude Desktop, Cursor, VS Code) can automatically find your authorization server
+- Add a Bearer token validation middleware that checks audience, issuer, expiry, and scopes before any MCP tool runs
+- Wire up per-tool scope enforcement so each tool only executes for users with the right permissions
+- Support both **Node.js** (Express / FastMCP) and **Python** (FastAPI / FastMCP) out of the box
 
-## Validation
+This plugin uses [Scalekit](https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents/) as the OAuth 2.1 authorization server — no auth infrastructure to build or maintain yourself.
 
-Validate the marketplace structure:
-
-```bash
-node scripts/validate-template.mjs
-```
+---
 
 ## License
 
-MIT
+[MIT](./LICENSE)
