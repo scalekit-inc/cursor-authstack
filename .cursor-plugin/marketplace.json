@@ -1,11 +1,11 @@
 {
   "name": "scalekit-authstack",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Scalekit Inc",
+    "email": "support@scalekit.com"
   },
   "metadata": {
-    "description": "Authentication skills for Cursor - OAuth, SSO, SCIM, MCP auth, and agent security",
+    "description": "Authentication skills for Cursor - OAuth, SSO, SCIM, MCP auth, and agent auth",
     "version": "0.1.0",
     "pluginRoot": "plugins"
   },
@@ -29,11 +29,6 @@
       "name": "modular-sso",
       "source": "modular-sso",
       "description": "Enterprise SSO integration"
-    },
-    {
-      "name": "modular-scim",
-      "source": "modular-scim",
-      "description": "User provisioning & SCIM"
     }
   ]
 }

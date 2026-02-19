@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "description": "Secure authentication for AI agents",
   "author": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Saif Ali Shaik",
+    "email": "saif@scalekit.com"
   },
   "license": "MIT",
-  "keywords": ["agent", "authentication", "oauth", "cursor"]
+  "logo": "assets/logo.svg",
+  "keywords": ["agent", "authentication", "oauth", "scalekit", "tools"]
 }

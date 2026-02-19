@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "description": "OAuth 2.1 authorization for MCP servers",
   "author": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Saif Ali Shaik",
+    "email": "saif@scalekit.com"
   },
   "license": "MIT",
-  "keywords": ["oauth", "mcp", "authentication", "cursor"]
+  "keywords": ["oauth", "mcp", "authentication", "oauth2.1"]
 }
