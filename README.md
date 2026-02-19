@@ -1,4 +1,4 @@
-# Scalekit Auth Stack
+# Scalekit AuthStack for Cursor
 
 A Cursor plugin marketplace that brings production-ready authentication to your existing projects — right from inside Cursor.
 
