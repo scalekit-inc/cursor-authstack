@@ -1,12 +1,19 @@
 {
   "name": "mcp-auth",
   "displayName": "MCP Auth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "OAuth 2.1 authorization for MCP servers",
   "author": {
     "name": "Saif Ali Shaik",
     "email": "saif@scalekit.com"
   },
+  "agents": "agents",
+  "skills": "skills",
+  "rules": "rules",
+  "commands": null,
+  "hooks": null,
+  "mcpServers": null,
+  "homepage":"https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents/",
   "license": "MIT",
   "keywords": ["oauth", "mcp", "authentication", "oauth2.1"]
 }

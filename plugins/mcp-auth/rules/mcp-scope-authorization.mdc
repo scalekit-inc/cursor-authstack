@@ -1,0 +1,52 @@
+---
+description: Apply scope-based authorization when implementing MCP tool handlers that need fine-grained access control using Scalekit token validation
+globs:
+alwaysApply: false
+---
+
+# Scope-Based MCP Tool Authorization
+
+Validate scopes at the individual tool execution level, not just at the server middleware level.
+
+## Node.js
+
+```typescript
+try {
+  await scalekit.validateToken(token, {
+    audience: [RESOURCE_ID],
+    requiredScopes: ['todo:read'] // scope specific to this tool
+  });
+} catch (error) {
+  return res.status(403).json({
+    error: 'insufficient_scope',
+    error_description: `Required scope: todo:read`,
+    scope: 'todo:read'
+  });
+}
+```
+
+## Python
+
+```python
+try:
+    scalekit_client.validate_access_token(
+        token,
+        options=TokenValidationOptions(
+            audience=[RESOURCE_ID],
+            required_scopes=["todo:read"]
+        )
+    )
+except ScalekitValidateTokenFailureException:
+    return {
+        "error": "insufficient_scope",
+        "error_description": "Required scope: todo:read",
+        "scope": "todo:read"
+    }
+```
+
+## Rules
+
+- Scope failures are HTTP 403 (not 401) — auth is valid, permission is not
+- `error` field must be exactly `"insufficient_scope"` per OAuth 2.0 spec
+- Always include the `scope` field in error response so the client knows what to re-request
+- Only validate scopes that are configured in the Scalekit dashboard

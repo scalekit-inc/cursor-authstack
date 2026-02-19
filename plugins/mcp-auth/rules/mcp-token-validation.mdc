@@ -1,0 +1,53 @@
+---
+description:
+globs: **/middleware.ts, **/middleware.js, **/auth*.ts, **/auth*.js, **/auth*.py, **/*middleware*.py
+alwaysApply: false
+---
+
+# MCP Token Validation with Scalekit
+
+Always use the Scalekit SDK to validate tokens — never parse JWTs manually.
+
+## Node.js pattern
+
+```typescript
+import { Scalekit } from '@scalekit-sdk/node';
+
+const scalekit = new Scalekit(
+  process.env.SCALEKIT_ENVIRONMENT_URL,
+  process.env.SCALEKIT_CLIENT_ID,
+  process.env.SCALEKIT_CLIENT_SECRET
+);
+
+// Extract token
+const authHeader = req.headers['authorization'];
+const token = authHeader?.startsWith('Bearer ')
+  ? authHeader.split('Bearer ')?.[1]?.trim()
+  : null;
+
+// Validate
+await scalekit.validateToken(token, {
+  audience: [RESOURCE_ID]
+});
+```
+
+## Python pattern
+
+```python
+from scalekit import ScalekitClient
+from scalekit.common.scalekit import TokenValidationOptions
+
+options = TokenValidationOptions(
+    issuer=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
+    audience=[RESOURCE_ID]
+)
+scalekit_client.validate_token(token, options=options)
+```
+
+## Rules
+
+- ALWAYS validate `aud`, `iss`, `exp`, `iat`, and `scope` claims
+- On validation failure, return HTTP 401 with `WWW-Authenticate: Bearer realm="OAuth", resource_metadata="<METADATA_ENDPOINT>"` header
+- Skip auth only for `.well-known/*` paths
+- RESOURCE_ID must match the Server URL in Scalekit dashboard exactly
+- For FastMCP: RESOURCE_ID must use base URL with trailing slash
