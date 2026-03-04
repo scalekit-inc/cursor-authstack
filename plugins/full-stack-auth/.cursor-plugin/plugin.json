@@ -2,7 +2,7 @@
   "name": "full-stack-auth",
   "displayName": "Full Stack Auth",
   "description": "Production-ready authentication flows (sign-up, login, logout, sessions) using Scalekit full-stack auth across common stacks.",
-  "version": "1.3.4",
+  "version": "1.0.0",
   "author": {
     "name": "Scalekit",
     "email": "hi@scalekit.com"
