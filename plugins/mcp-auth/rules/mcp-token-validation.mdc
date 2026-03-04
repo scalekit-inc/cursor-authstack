@@ -1,6 +1,6 @@
 ---
-description:
-globs: **/middleware.ts, **/middleware.js, **/auth*.ts, **/auth*.js, **/auth*.py, **/*middleware*.py
+description: Enforce server-side Bearer token validation using the Scalekit SDK in MCP server middleware, never manual JWT parsing.
+globs: ["**/middleware.ts", "**/middleware.js", "**/auth*.ts", "**/auth*.js", "**/auth*.py", "**/*middleware*.py"]
 alwaysApply: false
 ---
 

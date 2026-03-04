@@ -1,0 +1,18 @@
+{
+  "name": "full-stack-auth",
+  "displayName": "Full Stack Auth",
+  "description": "Production-ready authentication flows (sign-up, login, logout, sessions) using Scalekit full-stack auth across common stacks.",
+  "version": "1.3.4",
+  "author": {
+    "name": "Scalekit",
+    "email": "hi@scalekit.com"
+  },
+  "homepage": "https://docs.scalekit.com",
+  "repository": "https://github.com/scalekit-inc/cursor-authstack",
+  "license": "MIT",
+  "keywords": ["authentication", "oauth", "full-stack", "sessions"],
+  "skills": "./skills",
+  "agents": "./agents",
+  "rules": "./rules",
+  "mcpServers": "./.mcp.json"
+}
