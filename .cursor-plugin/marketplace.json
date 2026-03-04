@@ -6,14 +6,44 @@
   },
   "metadata": {
     "description": "Everything that you need to add authstack to your projects. MCP Auth, Agent Auth, Full Stack Auth, Enterprise SSO, User Provisioning, and more.",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
       "name": "mcp-auth",
       "source": "mcp-auth",
-      "description": "OAuth 2.1 for MCP servers to secure your MCP servers and tools."
+      "description": "Guides users through adding production-ready OAuth 2.1 authorization to Model Context Protocol (MCP) servers",
+      "category": "testing",
+      "homepage": "https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents"
+    },
+    {
+      "name": "agent-auth",
+      "source": "agent-auth",
+      "description": "Implements Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users.",
+      "category": "agent auth",
+      "homepage": "https://docs.scalekit.com/authenticate/agent/start-agent-auth-coding-agents"
+    },
+    {
+      "name": "modular-sso",
+      "source": "modular-sso",
+      "description": "Integrates with all popular SSO providers (Okta, JumpCloud, Entra ID, etc.) and allows users to login to your app using their existing identity provider.",
+      "category": "enterprise auth",
+      "homepage": "https://docs.scalekit.com"
+    },
+    {
+      "name": "modular-scim",
+      "source": "modular-scim",
+      "description": "Automates user and group provisioning and deprovisioning via SCIM 2.0 with identity providers like Okta, Entra ID, and JumpCloud.",
+      "category": "enterprise auth",
+      "homepage": "https://docs.scalekit.com"
+    },
+    {
+      "name": "full-stack-auth",
+      "source": "full-stack-auth",
+      "description": "Adds end-to-end authentication to B2B and AI apps including user management, organization handling, session management, RBAC, and login flows.",
+      "category": "auth",
+      "homepage": "https://docs.scalekit.com"
     }
   ]
 }

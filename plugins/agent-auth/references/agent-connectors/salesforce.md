@@ -1,0 +1,316 @@
+Connect to Salesforce CRM. Manage leads, opportunities, accounts, and customer relationships
+
+Supports authentication: OAuth 2.0
+
+## Table of Contents
+
+- [Tool list](#tool-list)
+
+---
+
+## Tool list
+
+## `salesforce_account_create`
+
+Create a new Account in Salesforce. Supports standard fields
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `AccountNumber` | Account number for the organization | string | null |
+| `AnnualRevenue` | Annual revenue | number | null |
+| `BillingCity` | Billing city | string | null |
+| `BillingCountry` | Billing country | string | null |
+| `BillingPostalCode` | Billing postal code | string | null |
+| `BillingState` | Billing state/province | string | null |
+| `BillingStreet` | Billing street | string | null |
+| `Description` | Description | string | null |
+| `Industry` | Industry | string | null |
+| `Name` | Account Name | string |
+| `NumberOfEmployees` | Number of employees | integer | null |
+| `OwnerId` | Record owner (User/Queue Id) | string | null |
+| `Phone` | Main phone number | string | null |
+| `RecordTypeId` | Record Type Id | string | null |
+| `Website` | Website URL | string | null |
+
+## `salesforce_account_delete`
+
+Delete an existing Account from Salesforce by account ID. This is a destructive operation that permanently removes the account record.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `account_id` | ID of the account to delete | string |
+
+## `salesforce_account_get`
+
+Retrieve details of a specific account from Salesforce by account ID. Returns account properties and associated data.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `account_id` | ID of the account to retrieve | string |
+| `fields` | Comma-separated list of fields to include in the response | string | null |
+
+## `salesforce_account_update`
+
+Update an existing Account in Salesforce by account ID. Allows updating account properties like name, phone, website, industry, billing information, and more.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `AccountNumber` | Account number for the organization | string | null |
+| `AccountSource` | Lead source for this account | string | null |
+| `AnnualRevenue` | Annual revenue | number | null |
+| `BillingCity` | Billing city | string | null |
+| `BillingCountry` | Billing country | string | null |
+| `BillingGeocodeAccuracy` | Billing geocode accuracy | string | null |
+| `BillingLatitude` | Billing address latitude | number | null |
+| `BillingLongitude` | Billing address longitude | number | null |
+| `BillingPostalCode` | Billing postal code | string | null |
+| `BillingState` | Billing state/province | string | null |
+| `BillingStreet` | Billing street | string | null |
+| `CleanStatus` | Data.com clean status | string | null |
+| `Description` | Description | string | null |
+| `DunsNumber` | D-U-N-S Number | string | null |
+| `Fax` | Fax number | string | null |
+| `Industry` | Industry | string | null |
+| `Jigsaw` | Data.com key | string | null |
+| `JigsawCompanyId` | Jigsaw company ID | string | null |
+| `NaicsCode` | NAICS code | string | null |
+| `NaicsDesc` | NAICS description | string | null |
+| `Name` | Account Name | string | null |
+| `NumberOfEmployees` | Number of employees | integer | null |
+| `OwnerId` | Record owner (User/Queue Id) | string | null |
+| `Ownership` | Ownership type | string | null |
+| `ParentId` | Parent Account Id | string | null |
+| `Phone` | Main phone number | string | null |
+| `Rating` | Account rating | string | null |
+| `RecordTypeId` | Record Type Id | string | null |
+| `ShippingCity` | Shipping city | string | null |
+| `ShippingCountry` | Shipping country | string | null |
+| `ShippingGeocodeAccuracy` | Shipping geocode accuracy | string | null |
+| `ShippingLatitude` | Shipping address latitude | number | null |
+| `ShippingLongitude` | Shipping address longitude | number | null |
+| `ShippingPostalCode` | Shipping postal code | string | null |
+| `ShippingState` | Shipping state/province | string | null |
+| `ShippingStreet` | Shipping street | string | null |
+| `Sic` | SIC code | string | null |
+| `SicDesc` | SIC description | string | null |
+| `Site` | Account site or location | string | null |
+| `TickerSymbol` | Stock ticker symbol | string | null |
+| `Tradestyle` | Trade style name | string | null |
+| `Type` | Account type | string | null |
+| `Website` | Website URL | string | null |
+| `YearStarted` | Year the company started | string | null |
+| `account_id` | ID of the account to update | string |
+
+## `salesforce_accounts_list`
+
+Retrieve a list of accounts from Salesforce using a pre-built SOQL query. Returns basic account information.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `limit` | Number of results to return per page | number |
+
+## `salesforce_composite`
+
+Execute multiple Salesforce REST API requests in a single call using the Composite API. Allows for efficient batch operations and related data retrieval.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `composite_request` | JSON string containing composite request with multiple sub-requests | string |
+
+## `salesforce_contact_create`
+
+Create a new contact in Salesforce. Allows setting contact properties like name, email, phone, account association, and other standard fields.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `AccountId` | Salesforce Account Id associated with this contact | string | null |
+| `Department` | Department of the contact | string | null |
+| `Description` | Free-form description | string | null |
+| `Email` | Email address of the contact | string | null |
+| `FirstName` | First name of the contact | string | null |
+| `LastName` | Last name of the contact (required) | string |
+| `LeadSource` | Lead source for the contact | string | null |
+| `MailingCity` | Mailing city | string | null |
+| `MailingCountry` | Mailing country | string | null |
+| `MailingPostalCode` | Mailing postal code | string | null |
+| `MailingState` | Mailing state/province | string | null |
+| `MailingStreet` | Mailing street | string | null |
+| `MobilePhone` | Mobile phone of the contact | string | null |
+| `Phone` | Phone number of the contact | string | null |
+| `Title` | Job title of the contact | string | null |
+
+## `salesforce_contact_get`
+
+Retrieve details of a specific contact from Salesforce by contact ID. Returns contact properties and associated data.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `contact_id` | ID of the contact to retrieve | string |
+| `fields` | Comma-separated list of fields to include in the response | string | null |
+
+## `salesforce_dashboard_metadata_get`
+
+Retrieve metadata for a Salesforce dashboard, including dashboard components, filters, layout, and the running user.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `dashboard_id` | The unique ID of the Salesforce dashboard | string |
+
+## `salesforce_global_describe`
+
+Retrieve metadata about all available SObjects in the Salesforce organization. Returns list of all objects with basic information.
+
+## `salesforce_limits_get`
+
+Retrieve organization limits information from Salesforce. Returns API usage limits, data storage limits, and other organizational constraints.
+
+## `salesforce_object_describe`
+
+Retrieve detailed metadata about a specific SObject in Salesforce. Returns fields, relationships, and other object metadata.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `sobject` | SObject API name to describe | string |
+
+## `salesforce_opportunities_list`
+
+Retrieve a list of opportunities from Salesforce using a pre-built SOQL query. Returns basic opportunity information.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `limit` | Number of results to return per page | number | null |
+
+## `salesforce_opportunity_create`
+
+Create a new opportunity in Salesforce. Allows setting opportunity properties like name, amount, stage, close date, and account association.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `AccountId` | Associated Account Id | string | null |
+| `Amount` | Opportunity amount | number | null |
+| `CampaignId` | Related Campaign Id | string | null |
+| `CloseDate` | Expected close date (YYYY-MM-DD, required) | string |
+| `Custom_Field__c` | Example custom field (replace with your org’s custom field API name) | string | null |
+| `Description` | Opportunity description | string | null |
+| `ForecastCategoryName` | Forecast category name | string | null |
+| `LeadSource` | Lead source | string | null |
+| `Name` | Opportunity name (required) | string |
+| `NextStep` | Next step in the sales process | string | null |
+| `OwnerId` | Record owner (User/Queue Id) | string | null |
+| `PricebookId` | Associated Price Book Id | string | null |
+| `Probability` | Probability percentage (0–100) | number | null |
+| `RecordTypeId` | Record Type Id for Opportunity | string | null |
+| `StageName` | Current sales stage (required) | string |
+| `Type` | Opportunity type | string | null |
+
+## `salesforce_opportunity_get`
+
+Retrieve details of a specific opportunity from Salesforce by opportunity ID. Returns opportunity properties and associated data.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `fields` | Comma-separated list of fields to include in the response | string | null |
+| `opportunity_id` | ID of the opportunity to retrieve | string |
+
+## `salesforce_opportunity_update`
+
+Update an existing opportunity in Salesforce by opportunity ID. Allows updating opportunity properties like name, amount, stage, and close date.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `AccountId` | Associated Account Id | string | null |
+| `Amount` | Opportunity amount | number | null |
+| `CampaignId` | Related Campaign Id | string | null |
+| `CloseDate` | Expected close date (YYYY-MM-DD) | string | null |
+| `Description` | Opportunity description | string | null |
+| `ForecastCategoryName` | Forecast category name | string | null |
+| `LeadSource` | Lead source | string | null |
+| `Name` | Opportunity name | string | null |
+| `NextStep` | Next step in the sales process | string | null |
+| `OwnerId` | Record owner (User/Queue Id) | string | null |
+| `Pricebook2Id` | Associated Price Book Id | string | null |
+| `Probability` | Probability percentage (0–100) | number | null |
+| `RecordTypeId` | Record Type Id for Opportunity | string | null |
+| `StageName` | Current sales stage | string | null |
+| `Type` | Opportunity type | string | null |
+| `opportunity_id` | ID of the opportunity to update | string |
+
+## `salesforce_query_soql`
+
+Execute SOQL queries against Salesforce data. Supports complex queries with joins, filters, and aggregations.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `query` | SOQL query string to execute | string |
+
+## `salesforce_report_metadata_get`
+
+Retrieve report, report type, and related metadata for a Salesforce report. Returns information about report structure, fields, groupings, and configuration.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `report_id` | The unique ID of the Salesforce report | string |
+
+## `salesforce_search_parameterized`
+
+Execute parameterized searches against Salesforce data. Provides simplified search interface with predefined parameters.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `fields` | Comma-separated list of fields to return | string | null |
+| `search_text` | Text to search for | string |
+| `sobject` | SObject type to search in | string |
+
+## `salesforce_search_sosl`
+
+Execute SOSL searches against Salesforce data. Performs full-text search across multiple objects and fields.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `search_query` | SOSL search query string to execute | string |
+
+## `salesforce_sobject_create`
+
+Create a new record for any Salesforce SObject type (Account, Contact, Lead, Opportunity, custom objects, etc.). Provide the object type and fields as a dynamic object.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `fields` | Object containing field names and values to set on the new record | `object` |
+| `sobject_type` | The Salesforce SObject API name (e.g., Account, Contact, Lead, CustomObject__c) | string |
+
+## `salesforce_sobject_delete`
+
+Delete a record from any Salesforce SObject type by ID. This is a destructive operation that permanently removes the record.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `record_id` | ID of the record to delete | string |
+| `sobject_type` | The Salesforce SObject API name (e.g., Account, Contact, Lead, CustomObject__c) | string |
+
+## `salesforce_sobject_get`
+
+Retrieve a record from any Salesforce SObject type by ID. Optionally specify which fields to return.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `fields` | Comma-separated list of fields to include in the response | string | null |
+| `record_id` | ID of the record to retrieve | string |
+| `sobject_type` | The Salesforce SObject API name (e.g., Account, Contact, Lead, CustomObject__c) | string |
+
+## `salesforce_sobject_update`
+
+Update an existing record for any Salesforce SObject type by ID. Only the fields provided will be updated.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `fields` | Object containing field names and values to update on the record | `object` |
+| `record_id` | ID of the record to update | string |
+| `sobject_type` | The Salesforce SObject API name (e.g., Account, Contact, Lead, CustomObject__c) | string |
+
+## `salesforce_soql_execute`
+
+Execute custom SOQL queries against Salesforce data. Supports complex queries with joins, filters, aggregations, and custom field selection.
+
+| Properties | Description | Type |
+| --- | --- | --- |
+| `soql_query` | SOQL query string to execute | string |

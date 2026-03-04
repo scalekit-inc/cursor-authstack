@@ -1,13 +1,18 @@
 {
   "name": "agent-auth",
   "displayName": "Agent Auth",
-  "version": "0.1.0",
-  "description": "Secure authentication for AI agents",
+  "description": "Implements Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users.",
+  "version": "1.0.0",
   "author": {
-    "name": "Saif Ali Shaik",
-    "email": "saif@scalekit.com"
+    "name": "Scalekit",
+    "email": "hi@scalekit.com"
   },
+  "homepage": "https://docs.scalekit.com",
+  "repository": "https://github.com/scalekit-inc/cursor-authstack",
   "license": "MIT",
-  "logo": "assets/logo.svg",
-  "keywords": ["agent", "authentication", "oauth", "scalekit", "tools"]
+  "keywords": ["scalekit", "agent-auth", "oauth", "connected-accounts"],
+  "skills": "./skills",
+  "agents": "./agents",
+  "rules": "./rules",
+  "mcpServers": "./.mcp.json"
 }

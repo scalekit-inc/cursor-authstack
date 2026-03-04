@@ -1,6 +1,6 @@
 ---
-description:
-globs: **/server.ts, **/server.js, **/main.py, **/app.py, **/app.ts, **/index.ts, **/index.js
+description: Enforce correct implementation of the OAuth Protected Resource discovery endpoint required by MCP clients to locate the Scalekit authorization server.
+globs: ["**/server.ts", "**/server.js", "**/main.py", "**/app.py", "**/app.ts", "**/index.ts", "**/index.js"]
 alwaysApply: false
 ---
 
