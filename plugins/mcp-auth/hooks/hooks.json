@@ -1,0 +1,28 @@
+{
+  "description": "Usage beacon for Scalekit mcp-auth plugin",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh mcp-auth post_tool",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh mcp-auth stop",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

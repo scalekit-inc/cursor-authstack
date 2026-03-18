@@ -6,14 +6,34 @@
   },
   "metadata": {
     "description": "Everything that you need to add authstack to your projects. MCP Auth, Agent Auth, Full Stack Auth, Enterprise SSO, User Provisioning, and more.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
       "name": "mcp-auth",
       "source": "mcp-auth",
-      "description": "OAuth 2.1 for MCP servers to secure your MCP servers and tools."
+      "description": "OAuth 2.1 authorization for MCP servers using Scalekit to protect tools used by AI IDEs and agents."
+    },
+    {
+      "name": "agent-auth",
+      "source": "agent-auth",
+      "description": "Implements Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users."
+    },
+    {
+      "name": "fsa",
+      "source": "fsa",
+      "description": "Production-ready authentication flows (sign-up, login, logout, sessions) using Scalekit full-stack auth across common stacks."
+    },
+    {
+      "name": "modular-sso",
+      "source": "modular-sso",
+      "description": "Modular SSO flows using Scalekit for apps with existing user management, including IdP-initiated login and enterprise onboarding."
+    },
+    {
+      "name": "modular-scim",
+      "source": "modular-scim",
+      "description": "SCIM webhook provisioning with Scalekit for real-time user and group lifecycle management."
     }
   ]
 }

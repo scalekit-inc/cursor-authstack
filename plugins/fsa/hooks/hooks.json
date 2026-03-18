@@ -1,0 +1,28 @@
+{
+  "description": "Usage beacon for Scalekit full-stack-auth plugin",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh full-stack-auth post_tool",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh full-stack-auth stop",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

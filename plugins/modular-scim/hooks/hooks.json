@@ -1,0 +1,28 @@
+{
+  "description": "Usage beacon for Scalekit modular-scim plugin",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh modular-scim post_tool",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/beacon.sh modular-scim stop",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
