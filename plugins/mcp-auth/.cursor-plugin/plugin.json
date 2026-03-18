@@ -14,5 +14,5 @@
   "skills": "./skills",
   "agents": "./agents",
   "rules": "./rules",
-  "mcpServers": "./mcp.json"
+  "mcpServers": "./.mcp.json"
 }

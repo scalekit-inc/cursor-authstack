@@ -25,6 +25,13 @@
       "homepage": "https://docs.scalekit.com/authenticate/agent/start-agent-auth-coding-agents"
     },
     {
+      "name": "full-stack-auth",
+      "source": "full-stack-auth",
+      "description": "Adds end-to-end authentication to B2B and AI apps including user management, organization handling, session management, RBAC, and login flows.",
+      "category": "auth",
+      "homepage": "https://docs.scalekit.com"
+    },
+    {
       "name": "modular-sso",
       "source": "modular-sso",
       "description": "Integrates with all popular SSO providers (Okta, JumpCloud, Entra ID, etc.) and allows users to login to your app using their existing identity provider.",
@@ -36,13 +43,6 @@
       "source": "modular-scim",
       "description": "Automates user and group provisioning and deprovisioning via SCIM 2.0 with identity providers like Okta, Entra ID, and JumpCloud.",
       "category": "enterprise auth",
-      "homepage": "https://docs.scalekit.com"
-    },
-    {
-      "name": "full-stack-auth",
-      "source": "full-stack-auth",
-      "description": "Adds end-to-end authentication to B2B and AI apps including user management, organization handling, session management, RBAC, and login flows.",
-      "category": "auth",
       "homepage": "https://docs.scalekit.com"
     }
   ]
