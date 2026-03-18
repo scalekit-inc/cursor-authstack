@@ -1,14 +1,18 @@
 {
   "name": "mcp-auth",
   "displayName": "MCP Auth",
-  "version": "0.4.0",
-  "description": "OAuth 2.1 authorization for MCP servers",
-  "author": { "name": "Saif Ali Shaik", "email": "saif@scalekit.com" },
-  "agents": "./agents",
-  "skills": "./skills",
-  "rules": "./rules",
-  "mcpServers": "./mcp.json",
-  "homepage": "https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents/",
+  "description": "OAuth 2.1 authorization for MCP servers using Scalekit to protect tools used by AI IDEs and agents.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Scalekit",
+    "email": "hi@scalekit.com"
+  },
+  "homepage": "https://docs.scalekit.com",
+  "repository": "https://github.com/scalekit-inc/cursor-authstack",
   "license": "MIT",
-  "keywords": ["oauth", "mcp", "authentication", "oauth2.1"]
+  "keywords": ["oauth", "mcp", "authentication", "scalekit"],
+  "skills": "./skills",
+  "agents": "./agents",
+  "rules": "./rules",
+  "mcpServers": "./mcp.json"
 }
