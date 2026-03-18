@@ -1,14 +1,18 @@
 {
   "name": "modular-sso",
   "displayName": "Modular SSO",
-  "version": "0.2.0",
   "description": "Modular SSO flows using Scalekit for apps with existing user management, including IdP-initiated login and enterprise onboarding.",
+  "version": "1.0.0",
   "author": {
-    "name": "Scalekit Inc",
-    "email": "support@scalekit.com"
+    "name": "Scalekit",
+    "email": "hi@scalekit.com"
   },
   "homepage": "https://docs.scalekit.com",
   "repository": "https://github.com/scalekit-inc/cursor-authstack",
   "license": "MIT",
-  "keywords": ["sso", "saml", "oidc", "authentication", "enterprise"]
+  "keywords": ["sso", "saml", "oidc", "authentication", "enterprise"],
+  "skills": "./skills",
+  "agents": "./agents",
+  "rules": "./rules",
+  "mcpServers": "./.mcp.json"
 }
