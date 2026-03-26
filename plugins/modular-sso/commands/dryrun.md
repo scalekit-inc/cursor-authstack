@@ -1,4 +1,5 @@
 ---
+name: dryrun-sso
 description: Run Scalekit dryrun in fsa
 argument-hint: "<mode:sso> <env_url> <client_id> [organization_id]"
 allowed-tools: Bash(node *), Bash(npx *)
