@@ -47,6 +47,7 @@ The installer:
 - downloads the latest `cursor-authstack` repository
 - installs each plugin into `~/.cursor/plugins/local/<plugin-name>`
 - verifies each installed plugin root contains `.cursor-plugin/plugin.json`
+- lets Cursor load each plugin's `.mcp.json` through the plugin manifest, including the hosted Scalekit MCP server URL
 - prints the next steps to reload Cursor and confirm the plugins loaded
 
 After it finishes:

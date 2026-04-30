@@ -441,8 +441,7 @@ The Scalekit MCP server is already hosted and ready to use:
 {
   "mcpServers": {
     "scalekit": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.scalekit.com/"]
+      "url": "https://mcp.scalekit.com"
     }
   }
 }

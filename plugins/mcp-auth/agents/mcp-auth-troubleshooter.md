@@ -66,7 +66,7 @@ Common failures:
 ### redirect_uri mismatch
 Cause: MCP client cached an old domain and is sending auth requests to a stale URL.
 Fix by client:
-- MCP-Remote: delete `~/.mcp-auth/mcp-remote-<version>` then reconnect.
+- Cursor: open Cursor Settings → MCP, remove the affected MCP server entry, then reconnect.
 - VS Code: open Command Palette → "Authentication: Remove Dynamic Authentication Provider" → reconnect.
 - Claude Desktop: clearing cached auth is NOT currently supported. Workaround: use a different domain/subdomain.
 

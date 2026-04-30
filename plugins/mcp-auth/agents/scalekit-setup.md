@@ -188,14 +188,13 @@ If yes, open or create `.cursor/mcp.json` and merge:
 {
   "mcpServers": {
     "scalekit": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.scalekit.com/"]
+      "url": "https://mcp.scalekit.com"
     }
   }
 }
 ```
 
-Instruct the user to restart Cursor. After restart, an OAuth workflow will launch to authorize the connection.
+Instruct the user to restart Cursor. After restart, Cursor will connect to the hosted Scalekit MCP server and launch an OAuth workflow to authorize the connection.
 
 ## Step 7: Index Scalekit Docs in Cursor (Recommended)
 
