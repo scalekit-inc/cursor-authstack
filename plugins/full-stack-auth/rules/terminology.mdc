@@ -1,0 +1,23 @@
+---
+description: Enforces consistent Scalekit product naming across full-stack-auth, modular-sso, modular-scim, and mcp-auth plugins. Prevents mixing old and new terminology.
+alwaysApply: true
+---
+
+# Terminology
+
+Use these terms consistently:
+
+- **Full Stack Auth (FSA)**: Scalekit manages the entire auth lifecycle (login, sessions, users).
+- **Modular SSO**: enterprise SSO integration where the app manages its own users and sessions. Scalekit handles only the SSO handshake.
+- **SCIM provisioning**: directory sync for automatic user and group lifecycle management via webhooks.
+- **Admin portal**: customer-facing iframe for self-serve SSO and SCIM configuration.
+- **MCP server auth**: OAuth 2.1 authorization for Model Context Protocol servers.
+
+## Preferred wording
+
+- Use `Modular SSO` when the app manages its own sessions. Use `Full Stack Auth SSO` when Scalekit manages everything.
+- Do not mix Agent Auth terminology (connectors, connected accounts, tools) in auth contexts. Agent Auth is about agent-to-tool authentication.
+
+## Why this rule exists
+
+The product surfaces (Full Stack Auth, Modular SSO, SCIM, MCP Auth) overlap but serve different architectures. This rule prevents confusion when the agent switches between plugins.

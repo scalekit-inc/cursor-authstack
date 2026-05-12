@@ -60,3 +60,9 @@ Work through each section in order — earlier sections are blockers for later o
 - OAuth authorization completion rate (initiated vs completed)
 - Per-service API error rates (distinguish auth errors from service errors)
 - Token expiry distribution (are tokens being refreshed proactively?)
+
+## Deep reference
+
+- Connected accounts lifecycle and states: [connected-accounts.md](../../references/connected-accounts.md)
+- Connection configuration: [connections.md](../../references/connections.md)
+- Bring your own OAuth credentials: [byoc.md](../../references/byoc.md)

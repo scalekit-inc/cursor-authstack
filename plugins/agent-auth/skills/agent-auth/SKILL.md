@@ -7,6 +7,17 @@ description: Integrates Scalekit Agent Auth into a project to handle OAuth flows
 
 Scalekit handles the full OAuth lifecycle — authorization, token storage, and refresh — so agents can act on behalf of users in Gmail, Slack, Notion, Calendar, and other connectors.
 
+## Mental model
+
+Keep these terms straight:
+
+- **connector**: the integration (e.g., Gmail, Slack, Salesforce)
+- **connection**: the environment-level dashboard configuration
+- **connected account**: the per-user authorization record
+- **tool**: the executable action exposed by a connector
+
+Prefer live tool discovery over hand-maintained catalogs. If the user needs the current tool list or schema, use the Scalekit SDK's tool discovery methods.
+
 **Required env vars**: `SCALEKIT_CLIENT_ID`, `SCALEKIT_CLIENT_SECRET`, `SCALEKIT_ENV_URL`
 → Get from [app.scalekit.com](https://app.scalekit.com): Developers → Settings → API Credentials
 
@@ -39,7 +50,7 @@ actions = scalekit.actions
 
 **Node.js**
 ```bash
-npm install @scalekit-sdk/node@2.2.0-beta.1
+npm install @scalekit-sdk/node
 ```
 ```typescript
 import { ScalekitClient } from '@scalekit-sdk/node';
@@ -223,7 +234,7 @@ for (const msg of messages) {
 Replace `"gmail"` with any supported connector name: `slack`, `notion`, `calendar`, etc.
 The SDK workflow (Steps 1–3) is identical for all connectors. Only the downstream API call (Step 4) changes.
 
-For connector-specific API details, see [CONNECTORS.md](CONNECTORS.md).
+For connector-specific API details, see [agent-connectors](../references/agent-connectors/README.md).
 
 ## Building agents
 
@@ -302,3 +313,8 @@ For an overview of supported providers and their capabilities, see [providers.md
 For comprehensive token management including refresh, security, and monitoring, see [token-management.md](../references/token-management.md).
 
 For configuring your own OAuth credentials per connector (whitelabeling, dedicated quotas), see [byoc.md](../references/byoc.md).
+
+## When to switch skills
+
+- Use `building-agent-mcp-server` when the user wants to expose Agent Auth tools over the MCP protocol.
+- Use `production-readiness-scalekit` when the user is going live or needs a pre-launch checklist.

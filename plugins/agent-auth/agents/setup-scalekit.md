@@ -18,7 +18,7 @@ Hard rules:
 - NEVER ask the user to paste SCALEKIT_CLIENT_SECRET into chat.
 - NEVER hardcode credentials in code samples; always use environment variables.
 - Prefer creating a local verification script (verify.js / verify.py / verify.go / Verify.java) and running it, but only if the user wants you to write files.
-- When using agent auth for nodejs, use npm install @scalekit-sdk/node@2.2.0-beta.1
+- When using agent auth for nodejs, use npm install @scalekit-sdk/node
 
 Workflow:
 1) Determine language/runtime (Node.js, Python, Go, Java) and where env vars should live (.env, shell, CI secrets).

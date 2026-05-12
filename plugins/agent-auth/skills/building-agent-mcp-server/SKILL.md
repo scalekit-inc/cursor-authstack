@@ -156,3 +156,15 @@ asyncio.run(main())
 > **Note — MCP client compatibility:** You can test this MCP server with popular clients like MCP Inspector, Claude Desktop, and other spec-compliant implementations. Note that ChatGPT's beta connector feature may not work properly as it's still in beta and doesn't fully adhere to the MCP specification yet.
 
 Full working example: [github.com/scalekit-inc/python-connect-demos/tree/main/mcp](https://github.com/scalekit-inc/python-connect-demos/tree/main/mcp)
+
+## Deep reference
+
+- Connected accounts lifecycle and states: [connected-accounts.md](../../references/connected-accounts.md)
+- Connection configuration: [connections.md](../../references/connections.md)
+- Code samples by framework: [code-samples.md](../../references/code-samples.md)
+- Bring your own OAuth credentials: [byoc.md](../../references/byoc.md)
+
+## When to switch skills
+
+- Use `agent-auth` when the user wants to integrate Agent Auth directly (SDK, not MCP).
+- Use `production-readiness-scalekit` when the user is going live or needs a pre-launch checklist.

@@ -5,6 +5,17 @@ description: Implements Scalekit full-stack authentication (FSA) including sign-
 
 # Scalekit Full-Stack Authentication
 
+## Mental model
+
+Scalekit acts as an OIDC/OAuth 2.0 provider for your application:
+
+- **Auth URL**: redirects the user to Scalekit's login page (or their IdP for SSO)
+- **Callback**: exchanges the authorization code for tokens (ID, access, refresh)
+- **Access token**: short-lived, carries roles and permissions
+- **Refresh token**: long-lived, used to renew access tokens without re-login
+
+One integration enables: magic links, social sign-ins, enterprise SSO, workspaces, MCP authentication, SCIM provisioning, and user management.
+
 ## Setup
 
 Install the SDK and set credentials in `.env`:
@@ -93,3 +104,10 @@ All SDK methods follow the same pattern across languages with minor naming conve
 ## What this unlocks
 
 One integration enables: Magic Link & OTP, social sign-ins, enterprise SSO, workspaces, MCP authentication, SCIM provisioning, and user management.
+
+## When to switch skills
+
+- Use `modular-sso` (in the modular-sso plugin) when the app manages its own users and sessions and needs only SSO.
+- Use `modular-scim` (in the modular-scim plugin) for SCIM provisioning alongside existing auth.
+- Use `mcp-auth` (in the mcp-auth plugin) for OAuth 2.1 authorization on MCP servers.
+- Use `production-readiness-scalekit` for a pre-launch checklist.

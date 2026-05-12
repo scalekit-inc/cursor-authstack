@@ -39,6 +39,25 @@ Activate when the user asks to:
 
 ---
 
+## Critical prerequisites
+
+- MCP OAuth 2.1 auth only works with **Streamable HTTP transport** — SSE and stdio transports do not support auth.
+- Your MCP server must be registered in the Scalekit dashboard before tokens can be validated.
+- HTTPS is required in production (HTTP is acceptable for localhost development).
+
+## Implementation approaches
+
+| Approach | Framework | Complexity | Best for |
+|---|---|---|---|
+| FastMCP + Scalekit provider | Python | Low | Simple MCP servers, quick start |
+| FastAPI + FastMCP | Python | Medium | Apps needing advanced authorization and existing FastAPI routes |
+| Express.js + custom middleware | Node.js | Medium | Node.js apps, fine-grained token control |
+
+Each approach has a dedicated skill with full walkthroughs:
+- `mcp-auth-fastmcp-scalekit` — FastMCP + Scalekit provider
+- `mcp-auth-fastapi-fastmcp-scalekit` — FastAPI + FastMCP
+- `mcp-auth-expressjs-scalekit` — Express.js with custom middleware
+
 ## Procedure
 
 ### 1) Scalekit dashboard setup (resource server registration)
@@ -121,3 +140,9 @@ See `references/SECURITY.md`. Minimum:
 - Deep technical notes: `references/REFERENCE.md`
 - Scope design patterns: `references/SCOPES.md`
 - Production hardening: `references/SECURITY.md`
+
+## When to switch skills
+
+- Use `full-stack-auth` (in the full-stack-auth plugin) for browser-based authentication flows.
+- Use `production-readiness-scalekit` for a pre-launch MCP auth checklist.
+- Use a framework-specific sub-skill (`mcp-auth-fastmcp-scalekit`, `mcp-auth-expressjs-scalekit`, `mcp-auth-fastapi-fastmcp-scalekit`) for a guided implementation in your stack.

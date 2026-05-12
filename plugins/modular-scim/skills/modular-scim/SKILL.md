@@ -228,3 +228,9 @@ After deploying the webhook endpoint:
 - Full Go/Java SDK examples → [REFERENCE.md](REFERENCE.md)
 - Webhook event payload schemas → [EVENTS.md](EVENTS.md)
 - RBAC group-to-role mapping patterns → [RBAC.md](RBAC.md)
+
+## When to switch skills
+
+- Use `full-stack-auth` (in the full-stack-auth plugin) when building login/signup flows, not just provisioning.
+- Use `modular-sso` (in the modular-sso plugin) for enterprise SSO alongside SCIM.
+- Use `production-readiness-scalekit` for a pre-launch provisioning checklist.

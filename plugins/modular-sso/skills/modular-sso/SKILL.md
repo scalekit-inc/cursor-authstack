@@ -404,7 +404,7 @@ Prevent failed redirects by checking SSO configuration before redirecting:
 
 **Node.js:**
 ```javascript
-const domain = email.split('@').toLowerCase(); [reddit](https://www.reddit.com/r/ClaudeAI/comments/1qb1024/ultimate_claude_skillmd_autobuilds_any_fullstack/)
+const domain = email.split('@').pop().toLowerCase();
 
 const connections = await scalekit.connections.listConnectionsByDomain({
   domain
@@ -571,4 +571,9 @@ app.post('/logout', (req, res) => {
 **Use progressive enhancement**: Start with basic SSO, add advanced features iteratively
 
 **Monitor authentication flows**: Track success rates and common failure points
-```
+
+## When to switch skills
+
+- Use `full-stack-auth` (in the full-stack-auth plugin) when Scalekit should manage the full auth lifecycle (login, sessions, users).
+- Use `modular-scim` (in the modular-scim plugin) for SCIM provisioning alongside SSO.
+- Use `production-readiness-scalekit` for a pre-launch SSO checklist.

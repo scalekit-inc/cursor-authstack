@@ -1,0 +1,23 @@
+---
+description: Enforces consistent Agent Auth terminology across skills, code, and docs. Prevents confusing connector, connection, and connected account.
+alwaysApply: true
+---
+
+# Terminology
+
+Use these terms consistently:
+
+- **connector**: the integration (e.g., Gmail, Slack, Salesforce)
+- **connection**: the environment-level dashboard configuration
+- **connected account**: the per-user authorization record
+- **tool**: the executable action exposed by a connector
+
+## Preferred wording
+
+- Prefer `connector` in explanations to users.
+- Use `provider` only when the SDK or API field literally uses that name.
+- Do not imply that `connection_name` is always the same as the connector slug.
+
+## Why this rule exists
+
+The old language mixed `provider`, `connector`, and `connection_name` too freely. This rule keeps the Agent Auth model stable across skills and docs.
