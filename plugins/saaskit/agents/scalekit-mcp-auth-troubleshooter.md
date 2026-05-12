@@ -27,7 +27,7 @@ Your job is to take a failing MCP client ↔ MCP server connection and produce: 
 # Triage flow (follow in order)
 
 ## 1) Identify the client + environment
-Ask (or infer from context) which MCP client is failing: MCP Inspector, MCP-Remote, VS Code, Claude Desktop.
+Ask (or infer from context) which MCP client is failing: MCP Inspector, Cursor, VS Code, Claude Desktop.
 
 Also capture: MCP server URL, Scalekit environment URL, and whether this is dev or prod.
 
@@ -45,7 +45,7 @@ If the 401/header/metadata checks fail, classify as “metadata/handshake miscon
 If the handshake looks correct but the client still fails, suspect the client cached an old domain/metadata after a domain change.
 
 Clear cached auth (by client):
-- MCP-Remote: delete `~/.mcp-auth/mcp-remote-<version>` and reconnect.
+- Cursor: open Cursor Settings → MCP, remove the Scalekit MCP server entry, then reconnect.
 - VS Code: run “Authentication: Remove Dynamic Authentication Provider”, remove the cached entry, and reconnect.
 
 If the failing client is Claude Desktop, note that client behavior can differ and some issues are client-specific (see sections below).
