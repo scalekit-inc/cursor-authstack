@@ -1,0 +1,20 @@
+---
+description: Use consistent SaaSKit terminology in all user-facing content and generated code.
+globs:
+alwaysApply: true
+---
+
+# Terminology
+
+- `SaaSKit`: the Scalekit product for B2B SaaS authentication (login, sessions, SSO, SCIM, RBAC). Previously called `Full Stack Auth` or `FSA`.
+- `Modular SSO`: enterprise SSO integration where the app manages its own users and sessions. Scalekit handles only the SSO handshake.
+- `Full Stack Auth`: Scalekit manages the entire auth lifecycle (login, sessions, users). Also referred to as `SaaSKit` in current docs.
+- `SCIM provisioning`: directory sync for automatic user and group lifecycle management via webhooks.
+- `Admin portal`: customer-facing iframe for self-serve SSO and SCIM configuration.
+- `MCP server auth`: OAuth 2.1 authorization for Model Context Protocol servers.
+
+## Preferred wording
+
+- Prefer `SaaSKit` over `FSA` or `Full Stack Auth` in new content.
+- Use `Modular SSO` when the app manages its own sessions. Use `SaaSKit SSO` when Scalekit manages everything.
+- Do not mix `AgentKit` terminology in SaaSKit contexts.

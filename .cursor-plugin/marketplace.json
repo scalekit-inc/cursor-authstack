@@ -5,44 +5,23 @@
     "email": "support@scalekit.com"
   },
   "metadata": {
-    "description": "Everything that you need to add authstack to your projects. MCP Auth, Agent Auth, Full Stack Auth, Enterprise SSO, User Provisioning, and more.",
+    "description": "Scalekit Auth Stack for Cursor — AgentKit and SaaSKit plugins. Add agent auth, tool calling, SSO, SCIM, MCP auth, and session management from Cursor.",
     "version": "1.0.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
-      "name": "mcp-auth",
-      "source": "mcp-auth",
-      "description": "Guides users through adding production-ready OAuth 2.1 authorization to Model Context Protocol (MCP) servers",
-      "category": "testing",
-      "homepage": "https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents"
-    },
-    {
-      "name": "agent-auth",
-      "source": "agent-auth",
-      "description": "Implements Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users.",
+      "name": "agentkit",
+      "source": "agentkit",
+      "description": "Authentication for AI agents. OAuth flows, token vault, 40+ connectors (Gmail, Slack, Salesforce, etc.), tool discovery, and live testing — so agents can act on behalf of users.",
       "category": "agent auth",
-      "homepage": "https://docs.scalekit.com/authenticate/agent/start-agent-auth-coding-agents"
+      "homepage": "https://docs.scalekit.com/agentkit/overview.md"
     },
     {
-      "name": "full-stack-auth",
-      "source": "full-stack-auth",
-      "description": "Adds end-to-end authentication to B2B and AI apps including user management, organization handling, session management, RBAC, and login flows.",
+      "name": "saaskit",
+      "source": "saaskit",
+      "description": "Production-ready auth for B2B SaaS apps. Login, sessions, SSO (Okta, Azure AD, Google), SCIM provisioning, RBAC, MCP server auth, and API key management.",
       "category": "auth",
-      "homepage": "https://docs.scalekit.com"
-    },
-    {
-      "name": "modular-sso",
-      "source": "modular-sso",
-      "description": "Integrates with all popular SSO providers (Okta, JumpCloud, Entra ID, etc.) and allows users to login to your app using their existing identity provider.",
-      "category": "enterprise auth",
-      "homepage": "https://docs.scalekit.com"
-    },
-    {
-      "name": "modular-scim",
-      "source": "modular-scim",
-      "description": "Automates user and group provisioning and deprovisioning via SCIM 2.0 with identity providers like Okta, Entra ID, and JumpCloud.",
-      "category": "enterprise auth",
       "homepage": "https://docs.scalekit.com"
     }
   ]

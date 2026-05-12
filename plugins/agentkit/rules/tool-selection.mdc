@@ -1,0 +1,28 @@
+---
+description: Keep the tool set as small as possible before handing it to an LLM.
+globs:
+alwaysApply: true
+---
+
+# Tool Selection
+
+Keep the tool set as small as possible before handing it to an LLM.
+
+## Rules
+
+- Start from the workflow, not the full catalog.
+- Discover only the connector or tool family relevant to the task.
+- Inspect `input_schema` before execution when required fields are unclear.
+- Avoid sending broad connector-wide tool lists to the model unless the task truly needs them.
+
+## Why this matters
+
+Too many tools degrade tool selection and parameter filling. Constraining the tool set improves both latency and correctness.
+
+## Practical pattern
+
+1. Identify the user goal.
+2. Discover a narrow candidate set.
+3. Inspect schema.
+4. Validate with one live execution if needed.
+5. Wire only the proven tools into the agent workflow.
