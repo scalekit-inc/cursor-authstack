@@ -45,7 +45,7 @@ Skills:
 
 Agents: `setup-auth.md`, `validate-mcp-auth.md`
 
-Rules: `mcp-oauth-discovery.mdc`, `mcp-scope-authorization.mdc`, `mcp-secrets-hygiene.mdc`, `mcp-token-validation.mdc`, `no-secrets.mdc`
+Rules: `mcp-oauth-discovery.mdc`, `mcp-scope-authorization.mdc`, `mcp-secrets-hygiene.mdc`, `mcp-token-validation.mdc`
 
 ### agent-auth
 

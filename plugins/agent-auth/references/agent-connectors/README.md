@@ -8,7 +8,10 @@ This directory contains documentation for all supported agent connectors in the 
 |-----------|-------------|-----------|
 | [Airtable](airtable.md) | Connect to Airtable bases for data management | OAuth 2.0 |
 | [Asana](asana.md) | Project management and task tracking | OAuth 2.0 |
+| [Attention](attention.md) | AI insights, conversations, teams, and workflows | API Key |
 | [BigQuery](bigquery.md) | Google BigQuery data warehouse | OAuth 2.0 |
+| [Chorus](chorus.md) | Sync calls, transcripts, conversation intelligence, and analytics | Basic Auth |
+| [Clari Copilot](clari_copilot.md) | Sales call transcripts, analytics, call data, and insights | API Key |
 | [ClickUp](clickup.md) | Project management and collaboration | OAuth 2.0 |
 | [Confluence](confluence.md) | Atlassian Confluence wiki pages | OAuth 2.0 |
 | [Dropbox](dropbox.md) | File storage and sharing | OAuth 2.0 |
@@ -23,6 +26,7 @@ This directory contains documentation for all supported agent connectors in the 
 | [Google Forms](google_forms.md) | Google Forms survey creation | OAuth 2.0 |
 | [Google Meet](google_meets.md) | Google Meet video conferencing | OAuth 2.0 |
 | [Google Sheets](google_sheets.md) | Google Sheets spreadsheet editing | OAuth 2.0 |
+| [Google Slides](google_slides.md) | Create, read, and modify presentations programmatically | OAuth 2.0 |
 | [Gong](gong.md) | Sales conversation intelligence | OAuth 2.0 |
 | [HubSpot](hubspot.md) | CRM and marketing automation | OAuth 2.0 |
 | [Intercom](intercom.md) | Customer messaging platform | OAuth 2.0 |
@@ -57,7 +61,7 @@ Each connector documentation includes:
 
 ## Authentication
 
-All connectors support OAuth 2.0 authentication through the Agent Auth platform. You'll need to:
+Connectors support OAuth 2.0, API Key, or Basic Auth authentication through the Agent Auth platform. You'll need to:
 
 1. Create a connection for the desired service
 2. Configure OAuth credentials in your connection
