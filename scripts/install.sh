@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+if ! command -v cursor >/dev/null 2>&1 && [[ ! -d "$HOME/.cursor" ]]; then
+  echo "Warning: Cursor does not appear to be installed (no cursor CLI and no ~/.cursor directory)." >&2
+  echo "The plugins will be copied, but you will need Cursor to use them." >&2
+  echo
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PLUGIN_ROOT="$REPO_ROOT/plugins"
