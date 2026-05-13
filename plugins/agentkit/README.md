@@ -16,7 +16,6 @@ Install from the Scalekit Auth Stack marketplace in Cursor.
 
 - `integrating-agentkit` — Core integration: SDK setup, connected accounts, OAuth flows, token fetching, downstream API calls, and agent framework examples.
 - `discovering-connector-tools` — Uses live AgentKit metadata to find tools, inspect schemas, and narrow the tool set.
-- `testing-agentkit-tools` — Generates authorization links, fetches live tool metadata, and executes tools.
 - `exposing-agentkit-via-mcp` — Exposes AgentKit tools through MCP for MCP-compatible runtimes.
 - `production-readiness-agentkit` — Structured production readiness checklist for AgentKit integrations.
 

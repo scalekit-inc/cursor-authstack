@@ -39,7 +39,6 @@ Authentication for AI agents. OAuth flows, token vault, 40+ connectors, tool dis
 Skills:
 - `integrating-agentkit` — core integration: SDK setup, connected accounts, OAuth flows, token fetching, agent frameworks
 - `discovering-connector-tools` — live tool metadata discovery, schema inspection, tool set narrowing
-- `testing-agentkit-tools` — generate auth links, fetch tool metadata, execute tools live
 - `exposing-agentkit-via-mcp` — expose AgentKit tools through MCP for compatible runtimes
 - `production-readiness-agentkit` — production readiness checklist for AgentKit integrations
 
