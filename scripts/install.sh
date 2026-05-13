@@ -12,6 +12,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PLUGIN_ROOT="$REPO_ROOT/plugins"
 TARGET_ROOT="${CURSOR_PLUGIN_LOCAL_DIR:-$HOME/.cursor/plugins/local}"
+
+# Old plugin names from v1.x (now consolidated into agentkit + saaskit)
+OLD_PLUGINS=("mcp-auth" "agent-auth" "modular-sso" "modular-scim" "full-stack-auth")
 INSTALL_MODE="${CURSOR_AUTHSTACK_INSTALL_MODE:-auto}"
 
 if [[ ! -d "$PLUGIN_ROOT" ]]; then
@@ -37,6 +40,19 @@ case "$INSTALL_MODE" in
 esac
 
 mkdir -p "$TARGET_ROOT"
+
+# Clean up old v1.x plugin directories if they exist from a previous install
+removed_old=()
+for old in "${OLD_PLUGINS[@]}"; do
+  if [[ -d "$TARGET_ROOT/$old" ]]; then
+    rm -rf "$TARGET_ROOT/$old"
+    removed_old+=("$old")
+  fi
+done
+if [[ "${#removed_old[@]}" -gt 0 ]]; then
+  echo "Removed old v1.x plugins: ${removed_old[*]}"
+  echo
+fi
 
 echo "Installing Scalekit Auth Stack for Cursor"
 echo "Repository: $REPO_ROOT"
