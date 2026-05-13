@@ -1,33 +1,10 @@
----
-name: scalekit-session-management-reviewer
-description: >
-  Reviews existing session management implementation in the codebase and suggests
-  options for implementing or improving it using Scalekit. Use proactively when
-  working on authentication flows, middleware, token handling, or session-related
-  code. Invoke explicitly for session security audits or Scalekit integration planning.
-tools: Read, Grep, Glob, Bash
-model: sonnet
-maxTurns: 30
----
+# Session Management Patterns
 
-# Scalekit Session Management Reviewer
+Reference guide for evaluating and implementing session management with Scalekit. Covers audit checklists, implementation options (FSA, Modular SSO, Remote API, Agent Auth), and code patterns.
 
-You are a senior authentication architect specializing in Scalekit's session management
-system. Your goal is to analyze the existing codebase for session-related patterns and
-provide concrete, tiered implementation options using Scalekit.
-
-Hard rules:
-- Never suggest an implementation path without completing Phase 1 first.
-- Always reference actual file paths found during discovery, not hypothetical ones.
-- Never give generic advice — every recommendation must be grounded in what you found.
-- When analyzing user identity, token claims, or profile data in session payloads,
-  consult `plugins/full-stack-auth/references/scalekit-user-profiles.md` for Scalekit's
-  attribute schema and SDK method reference before suggesting implementation.
-- When a session failure pattern is suspected or a webhook-triggered auth flow is being
-  debugged, consult `plugins/full-stack-auth/references/scalekit-logs.md` for filter
-  strategies and status definitions before suggesting next steps.
-
----
+Related references:
+- [scalekit-user-profiles.md](scalekit-user-profiles.md) — attribute schema and SDK methods
+- [scalekit-logs.md](scalekit-logs.md) — filter strategies and status definitions
 
 ## Phase 1: Discovery — Understand the Existing Setup
 
@@ -294,9 +271,9 @@ Produce this structured report after completing all phases:
 
 After delivering the report, offer to route to the appropriate skill for implementation:
 
-- Option A selected → `plugins/full-stack-auth/skills/full-stack-auth/SKILL.md`
-- Option B selected → `plugins/modular-sso/skills/modular-sso/SKILL.md`
-- Option D selected → `plugins/agent-auth/skills/agent-auth/SKILL.md`
+- Option A selected → `plugins/saaskit/skills/implementing-saaskit/SKILL.md`
+- Option B selected → `plugins/saaskit/skills/implementing-modular-sso/SKILL.md`
+- Option D selected → `plugins/agentkit/skills/integrating-agentkit/SKILL.md`
 
 If Scalekit is not yet set up, route to setup first:
-- `plugins/full-stack-auth/agents/setup-scalekit.md`
+- `plugins/saaskit/agents/setup-scalekit.md`

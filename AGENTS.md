@@ -59,11 +59,11 @@ Skills:
 - `adding-mcp-oauth` — OAuth 2.1 for MCP servers (FastMCP, Express, FastAPI reference files included)
 - `production-readiness-saaskit` — unified production checklist across all SaaSKit domains
 
-Agents: `setup-scalekit.md`, `sdk-version-advisor.md`, `session-management-reviewer.md`, `scalekit-mcp-auth-troubleshooter.md`, `scalekit-mcp-helper.md`
+Agents: `setup-scalekit.md`, `scalekit-mcp-auth-troubleshooter.md`
 
 Rules: `terminology.mdc`, `redirect-urls.mdc`
 
-References: `bring-your-own-auth.md`, `redirects.md`, `scalekit-logs.md`, `scalekit-mcp-server.md`, `scalekit-user-profiles.md`
+References: `bring-your-own-auth.md`, `redirects.md`, `scalekit-logs.md`, `scalekit-mcp-server.md`, `scalekit-user-profiles.md`, `session-management-patterns.md`
 
 ## Non-negotiable rules
 
