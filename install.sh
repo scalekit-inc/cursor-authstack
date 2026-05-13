@@ -27,9 +27,10 @@ tar -xzf "$ARCHIVE_PATH" -C "$TMP_DIR"
 
 EXTRACTED_DIR="$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
 
-if [[ -z "$EXTRACTED_DIR" ]] || [[ ! -x "$EXTRACTED_DIR/scripts/install.sh" ]]; then
+if [[ -z "$EXTRACTED_DIR" ]] || [[ ! -f "$EXTRACTED_DIR/scripts/install.sh" ]]; then
   echo "Failed to find installer in downloaded archive." >&2
   exit 1
 fi
 
+chmod +x "$EXTRACTED_DIR/scripts/install.sh"
 exec "$EXTRACTED_DIR/scripts/install.sh"
