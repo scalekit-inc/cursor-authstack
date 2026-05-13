@@ -27,7 +27,7 @@ AgentKit supports a wide range of popular business applications:
 | **Data & Analytics** | BigQuery, Snowflake, Fathom |
 | **Service Management** | ServiceNow |
 
-For per-connector tool specifications, see [agent-connectors/README.md](agent-connectors/README.md).
+For per-connector tool specifications, see the [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
 
 ## Connector capabilities
 
@@ -185,6 +185,6 @@ AgentKit normalizes connector-specific errors into consistent error responses:
 
 - [connections.md](connections.md) — how to configure authentication credentials for a connector
 - [connected-accounts.md](connected-accounts.md) — per-user account lifecycle and token management
-- [agent-connectors/README.md](agent-connectors/README.md) — detailed API tools for each connector
+- [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/) — detailed API tools for each connector
 - [tool-discovery.md](tool-discovery.md) — live discovery model for current tools and schemas
 - [code-samples.md](code-samples.md) — implementation examples by framework

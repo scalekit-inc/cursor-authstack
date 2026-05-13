@@ -45,7 +45,7 @@ Skills:
 
 Rules: `terminology.mdc`, `live-metadata-first.mdc`, `tool-selection.mdc`
 
-References: `agent-connectors/` (44 connector docs), `connected-accounts.md`, `code-samples.md`, `connectors.md`, `connections.md`, `byoc.md`, `redirects.md`, `tool-discovery.md`
+References: `connected-accounts.md`, `code-samples.md`, `connectors.md`, `connections.md`, `byoc.md`, `redirects.md`, `tool-discovery.md`
 
 ### saaskit
 

@@ -50,6 +50,6 @@ Use `connector` in explanations. Only use `provider` when the SDK or API filter 
 
 ## Deep reference
 
-- Connector reference: [../../references/agent-connectors/README.md](../../references/agent-connectors/README.md)
+- Connector reference: [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/)
 - Connected accounts lifecycle: [../../references/connected-accounts.md](../../references/connected-accounts.md)
 - Code samples: [../../references/code-samples.md](../../references/code-samples.md)

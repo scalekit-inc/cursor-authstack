@@ -6,7 +6,7 @@ Authentication for AI agents. This plugin brings Scalekit AgentKit into Cursor s
 
 AgentKit handles the full OAuth lifecycle — authorization, token vault, and automatic refresh — across 40+ connectors (Gmail, Slack, Salesforce, Notion, and more).
 
-The plugin treats live AgentKit metadata as the source of truth for tool names, `input_schema`, and `output_schema`. Connector notes in `references/agent-connectors/` are curated guidance, not a guaranteed exhaustive catalog.
+The plugin treats live AgentKit metadata as the source of truth for tool names, `input_schema`, and `output_schema`. For per-connector details, see the [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
 
 ## Installation
 

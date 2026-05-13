@@ -223,7 +223,7 @@ for (const msg of messages) {
 Replace `"gmail"` with any supported connector name: `slack`, `notion`, `calendar`, etc.
 The SDK workflow (Steps 1–3) is identical for all connectors. Only the downstream API call (Step 4) changes.
 
-For connector-specific API details, see the [agent connectors reference](../../references/agent-connectors/README.md).
+For connector-specific API details, see the [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
 
 ## Building agents
 

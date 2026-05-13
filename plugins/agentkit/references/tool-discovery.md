@@ -52,7 +52,7 @@ For implementation guidance, use:
 - The Scalekit MCP server when the user wants to execute a tool and inspect the payload interactively
 - `integrating-agentkit` when the user wants to wire the result into application code
 
-For per-connector tool specifications, see [agent-connectors/README.md](agent-connectors/README.md).
+For per-connector tool specifications, see the [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
 
 ## Connection names vs connector names
 
