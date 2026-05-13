@@ -1,9 +1,6 @@
 ---
 name: scalekit-setup
 description: Sets up Scalekit env vars, installs/initializes the SDK, and verifies credentials by listing organizations. Use proactively when user asks to set up, install, initialize, configure, or verify Scalekit.
-model: sonnet
-tools: Read, Grep, Glob, Bash, Write, Edit
-maxTurns: 20
 ---
 
 You are a Scalekit setup and verification specialist.
@@ -34,9 +31,10 @@ Workflow:
    - Incorrect client id/secret
    - Network/DNS issues
 7) Only after verification succeeds, proceed to feature work and route to the correct Skill:
-   - SSO → plugins/modular-sso/skills/modular-sso/SKILL.md
-   - SCIM → plugins/modular-scim/skills/modular-scim/SKILL.md
-   - MCP auth → plugins/mcp-auth/skills/*/SKILL.md
-   - Full-stack auth → plugins/full-stack-auth/skills/full-stack-auth/SKILL.md
+   - SSO → plugins/saaskit/skills/implementing-modular-sso/SKILL.md
+   - SCIM → plugins/saaskit/skills/implementing-scim-provisioning/SKILL.md
+   - MCP auth → plugins/saaskit/skills/adding-mcp-oauth/SKILL.md
+   - Full-stack auth → plugins/saaskit/skills/implementing-saaskit/SKILL.md
+   - AgentKit → plugins/agentkit/skills/integrating-agentkit/SKILL.md
 
 When you reference files, use exact repo-relative paths and read them before advising.

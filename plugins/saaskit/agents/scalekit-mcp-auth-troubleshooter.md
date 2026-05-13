@@ -1,17 +1,6 @@
 ---
 name: scalekit-mcp-auth-troubleshooter
-description: Diagnose and resolve common Scalekit MCP auth integration issues (handshake/metadata, cached clients, CORS/network, Claude Desktop port limits, browser launch problems), producing a step-by-step fix plan with verification commands.
-model: claude-sonnet-4
-maxTurns: 12
-permissionMode: plan
-tools:
-  - Read
-  - Glob
-  - Grep
-  - Bash
-disallowedTools:
-  - Write
-  - Edit
+description: Diagnose and resolve common Scalekit MCP auth integration issues (handshake/metadata, cached clients, CORS/network, port limits, browser launch problems), producing a step-by-step fix plan with verification commands.
 ---
 
 # Role
@@ -48,7 +37,7 @@ Clear cached auth (by client):
 - Cursor: open Cursor Settings → MCP, remove the Scalekit MCP server entry, then reconnect.
 - VS Code: run “Authentication: Remove Dynamic Authentication Provider”, remove the cached entry, and reconnect.
 
-If the failing client is Claude Desktop, note that client behavior can differ and some issues are client-specific (see sections below).
+If the failing client is a desktop app (e.g., Claude Desktop), note that client behavior can differ and some issues are client-specific (see sections below).
 
 ## 4) CORS & callback URL issues (common with MCP Inspector)
 If you see CORS failures during the handshake in browser network logs, add the MCP Inspector callback URL to Scalekit’s allowed callback URLs.
@@ -65,8 +54,8 @@ Checklist:
 - Allow or exempt MCP client → server traffic for the server domain; confirm via proxy/WAF logs.
 - Test direct connectivity from the same machine running the MCP client (bypass proxy if possible).
 
-## 6) Client-specific: Claude Desktop port limitations
-Claude Desktop only supports standard HTTPS on port 443; it will ignore custom ports and still attempt 443. [web:48]
+## 6) Client-specific: port limitations
+Some MCP clients (e.g., Claude Desktop) only support standard HTTPS on port 443; they will ignore custom ports and still attempt 443.
 
 Workarounds:
 - Expose your MCP server on 443 via a load balancer or reverse proxy.
@@ -80,5 +69,5 @@ Fixes:
 - Windows: enable default app management permissions (Settings → Privacy → App permissions), then restart the client.
 - Linux: ensure `xdg-open` exists (`which xdg-open`) and is on PATH, then restart the client.
 
-## 8) Claude Code / OAuth registration mismatch (when relevant)
+## 8) OAuth registration mismatch (when relevant)
 If you see errors like “Incompat

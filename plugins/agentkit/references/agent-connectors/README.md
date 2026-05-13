@@ -1,6 +1,6 @@
 # Agent Connectors Reference
 
-This directory contains documentation for all supported agent connectors in the Scalekit Agent Auth platform.
+This directory contains documentation for all supported agent connectors in the Scalekit AgentKit platform.
 
 ## Available Connectors
 

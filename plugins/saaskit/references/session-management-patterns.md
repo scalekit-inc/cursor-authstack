@@ -1,6 +1,6 @@
 # Session Management Patterns
 
-Reference guide for evaluating and implementing session management with Scalekit. Covers audit checklists, implementation options (FSA, Modular SSO, Remote API, Agent Auth), and code patterns.
+Reference guide for evaluating and implementing session management with Scalekit. Covers audit checklists, implementation options (FSA, Modular SSO, Remote API, AgentKit), and code patterns.
 
 Related references:
 - [scalekit-user-profiles.md](scalekit-user-profiles.md) — attribute schema and SDK methods
@@ -210,7 +210,7 @@ await scalekit.sessions.revokeAll({ userId: req.user.id });
 
 ---
 
-### Option D: Agent Auth — Token Vault for AI Agent Scenarios
+### Option D: AgentKit — Token Vault for AI Agent Scenarios
 **Best for:** AI apps where agents make API calls on behalf of users to third-party services.
 
 ```typescript

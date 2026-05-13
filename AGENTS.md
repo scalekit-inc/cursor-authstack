@@ -27,7 +27,8 @@ plugins/<plugin-name>/
   agents/                       Optional: custom sub-agents
   rules/                        Optional: Cursor rules (.mdc files with frontmatter)
   commands/                     Optional: slash commands
-  .mcp.json                     Optional: MCP server configuration
+  mcp.json                      Optional: MCP server configuration
+  hooks/hooks.json               Optional: lifecycle hooks
 ```
 
 ## Plugins
@@ -42,11 +43,9 @@ Skills:
 - `exposing-agentkit-via-mcp` — expose AgentKit tools through MCP for compatible runtimes
 - `production-readiness-agentkit` — production readiness checklist for AgentKit integrations
 
-Agents: `setup-scalekit.md`
-
 Rules: `terminology.mdc`, `live-metadata-first.mdc`, `tool-selection.mdc`
 
-References: `agent-connectors/` (44 connector docs), `connected-accounts.md`, `code-samples.md`, `providers.md`, `connections.md`, `byoc.md`, `redirects.md`
+References: `agent-connectors/` (44 connector docs), `connected-accounts.md`, `code-samples.md`, `connectors.md`, `connections.md`, `byoc.md`, `redirects.md`, `tool-discovery.md`
 
 ### saaskit
 
@@ -57,6 +56,13 @@ Skills:
 - `implementing-modular-sso` — enterprise SSO (SAML/OIDC) with 20+ IdPs, admin portal, JIT provisioning
 - `implementing-scim-provisioning` — SCIM 2.0 webhooks, user/group lifecycle, directory API
 - `adding-mcp-oauth` — OAuth 2.1 for MCP servers (FastMCP, Express, FastAPI reference files included)
+- `adding-api-auth` — API keys and client credentials for machine-to-machine auth
+- `implementing-access-control` — RBAC and permission enforcement using token claims
+- `implementing-saaskit-nextjs` — Next.js App Router integration
+- `implementing-saaskit-python` — Django, FastAPI, Flask integration
+- `managing-saaskit-sessions` — token storage, validation, refresh, revocation
+- `migrating-to-saaskit` — migration planner from existing auth systems
+- `testing-auth-setup` — validates auth config with the dryrun CLI
 - `production-readiness-saaskit` — unified production checklist across all SaaSKit domains
 
 Agents: `setup-scalekit.md`, `scalekit-mcp-auth-troubleshooter.md`
@@ -111,7 +117,7 @@ Context budget:
 
 ## MCP rules
 
-- `.mcp.json` must use environment variables for secrets, never inline credentials.
+- `mcp.json` must use environment variables for secrets, never inline credentials.
 - Tools must be outcome-focused and handle common failures inside the tool.
 - Validate all tool inputs at boundaries.
 

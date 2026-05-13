@@ -16,6 +16,13 @@ Install from the Scalekit Auth Stack marketplace in Cursor.
 - `implementing-modular-sso` — Enterprise SSO (SAML/OIDC) with 20+ IdPs, admin portal, JIT provisioning.
 - `implementing-scim-provisioning` — SCIM 2.0 webhooks, user/group lifecycle, directory API.
 - `adding-mcp-oauth` — OAuth 2.1 for MCP servers (FastMCP, Express, FastAPI).
+- `adding-api-auth` — API keys and client credentials for machine-to-machine auth.
+- `implementing-access-control` — RBAC and permission enforcement using token claims.
+- `implementing-saaskit-nextjs` — Next.js App Router integration with Scalekit.
+- `implementing-saaskit-python` — Django, FastAPI, Flask integration with Scalekit.
+- `managing-saaskit-sessions` — Token storage, validation, refresh, revocation.
+- `migrating-to-saaskit` — Migration planner from existing auth systems.
+- `testing-auth-setup` — Validates auth config with the dryrun CLI.
 - `production-readiness-saaskit` — Unified production checklist across all SaaSKit domains.
 
 ## Configuration

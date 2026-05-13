@@ -3,7 +3,7 @@ name: integrating-agentkit
 description: Integrates Scalekit AgentKit into a project to handle OAuth flows, token storage, and automatic refresh for third-party connectors (Gmail, Slack, Notion, Calendar, and 40+ more). Use when a user needs to connect to an external service, authorize OAuth access, fetch access or refresh tokens, execute API calls on behalf of a user, or build agents with LangChain or Google ADK.
 ---
 
-# Agent Auth Integration
+# AgentKit Integration
 
 Scalekit handles the full OAuth lifecycle — authorization, token storage, and refresh — so agents can act on behalf of users in Gmail, Slack, Notion, Calendar, and other connectors.
 
@@ -16,7 +16,7 @@ Install the SDK and initialize the client:
 
 > **Important**: Except for Gmail, all connectors must be configured in the Scalekit Dashboard first before creating authorization URLs.
 >
-> To set up a connector: **Scalekit Dashboard → Agent Auth → Connections → + Create Connection → Select connector → Set Connection Name → Save**
+> To set up a connector: **Scalekit Dashboard → AgentKit → Connections → + Create Connection → Select connector → Set Connection Name → Save**
 
 <tabs>
 
@@ -63,7 +63,7 @@ Before integrating with a connector, follow these steps in the Scalekit Dashboar
 
 For all other connectors (Slack, Notion, Google Calendar, etc.):
 
-1. Go to **Scalekit Dashboard → Agent Auth → Connections**
+1. Go to **Scalekit Dashboard → AgentKit → Connections**
 2. Click **+ Create Connection**
 3. Select the connector you want to use
 4. Enter a **Connection Name** (e.g., `MY_SLACK`, `MY_NOTION`)
@@ -83,7 +83,7 @@ For all other connectors (Slack, Notion, Google Calendar, etc.):
 Copy this checklist and check off steps as you complete them:
 
 ```
-Agent Auth Integration Progress:
+AgentKit Integration Progress:
 - [ ] Step 1: SDK installed and client initialized
 - [ ] Step 2: Connected account created for the user
 - [ ] Step 3: User has authorized the connection (status = ACTIVE)
@@ -297,7 +297,7 @@ For comprehensive documentation on connected accounts lifecycle, states, and API
 
 For code samples and implementation examples by framework, see [code-samples.md](../references/code-samples.md).
 
-For an overview of supported providers and their capabilities, see [providers.md](../references/providers.md).
+For an overview of supported providers and their capabilities, see [connectors.md](../references/connectors.md).
 
 For comprehensive token management including refresh, security, and monitoring, see [token-management.md](../references/token-management.md).
 

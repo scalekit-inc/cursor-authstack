@@ -1,6 +1,6 @@
 # Bring Your Own Credentials
 
-Bring Your Own Credentials (BYOC) allows you to use your own OAuth applications and authentication credentials with Agent Auth instead of Scalekit's shared credentials. This provides complete control over the authentication experience and enables full whitelabeling of your application.
+Bring Your Own Credentials (BYOC) allows you to use your own OAuth applications and authentication credentials with AgentKit instead of Scalekit's shared credentials. This provides complete control over the authentication experience and enables full whitelabeling of your application.
 
 ## Why bring your own credentials?
 
@@ -33,7 +33,7 @@ With BYOC, authentication flows work as follows:
 
 1. **Scalekit** handles the initial authentication request with your OAuth client-id details
 2. **Provider** authenticates the user and returns tokens to Scalekit
-3. **Agent Auth** uses your tokens to execute tools on behalf of users
+3. **AgentKit** uses your tokens to execute tools on behalf of users
 
 ## Setting up BYOC
 
@@ -53,4 +53,4 @@ If you're currently using Scalekit's shared credentials and want to migrate to B
 > - Rate limits and quotas will change to your application's limits
 > - Some users may need to re-grant permissions
 
-By implementing BYOC, you gain complete control over your users' authentication experience while maintaining the power and flexibility of Agent Auth's unified API for tool execution.
+By implementing BYOC, you gain complete control over your users' authentication experience while maintaining the power and flexibility of AgentKit's unified API for tool execution.

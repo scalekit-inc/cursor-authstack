@@ -1,6 +1,6 @@
 # Connections
 
-Connections in Agent Auth are specific configurations that define how your application authenticates and interacts with third-party providers. Each connection contains the necessary credentials, settings, and parameters required to establish secure communication with a provider's API.
+Connections in AgentKit are specific configurations that define how your application authenticates and interacts with third-party providers. Each connection contains the necessary credentials, settings, and parameters required to establish secure communication with a provider's API.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ Connections in Agent Auth are specific configurations that define how your appli
 
 ## What are connections?
 
-Connections serve as the bridge between your Agent Auth setup and third-party providers. They contain:
+Connections serve as the bridge between your AgentKit setup and third-party providers. They contain:
 
 - **Authentication credentials** (OAuth client ID/secret, API keys, etc.)
 - **Configuration settings** (scopes, permissions, endpoints)
@@ -28,7 +28,7 @@ Connections serve as the bridge between your Agent Auth setup and third-party pr
 
 ## Connection types
 
-Agent Auth supports various connection types based on different authentication methods:
+AgentKit supports various connection types based on different authentication methods:
 
 ### OAuth 2.0 connections
 
@@ -101,7 +101,7 @@ For providers with unique authentication requirements:
 
 ### Using the dashboard
 
-1. **Navigate to connections** in your Agent Auth dashboard
+1. **Navigate to connections** in your AgentKit dashboard
 2. **Select provider** from the list of available providers
 3. **Choose connection type** based on your authentication method
 4. **Configure credentials** by entering your API keys or OAuth settings
@@ -111,7 +111,7 @@ For providers with unique authentication requirements:
 
 ### Using the API
 
-Create connections programmatically using the Agent Auth API:
+Create connections programmatically using the AgentKit API:
 
 **cURL:**
 
@@ -427,7 +427,7 @@ Use templates for common connection patterns:
 }
 ```
 
-Next, learn how to create and manage [Connected accounts](/agent-auth/connected-accounts) that use these connections to authenticate and execute tools for your users.
+Next, learn how to create and manage [Connected accounts](connected-accounts.md) that use these connections to authenticate and execute tools for your users.
 
 ## Related documentation
 

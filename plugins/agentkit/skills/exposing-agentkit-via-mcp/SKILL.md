@@ -7,9 +7,9 @@ description: Guides developers through creating a Scalekit MCP server with authe
 
 Scalekit lets you build MCP servers that manage authentication, create personalized access URLs for users, and define which tools are accessible. You can also bundle several toolkits (e.g., Gmail + Google Calendar) within a single server.
 
-[Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open-source standard that enables AI systems to interface with external tools and data sources. Where the `integrating-agent-auth` skill uses the SDK directly, this workflow exposes Scalekit tools over the MCP protocol so any compliant client — LangChain, Claude Desktop, MCP Inspector — can consume them.
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open-source standard that enables AI systems to interface with external tools and data sources. Where the `integrating-agentkit` skill uses the SDK directly, this workflow exposes Scalekit tools over the MCP protocol so any compliant client — LangChain, Claude Desktop, MCP Inspector — can consume them.
 
-> **Note:** Agent Auth MCP servers only support Streamable HTTP transport.
+> **Note:** AgentKit MCP servers only support Streamable HTTP transport.
 
 ## What you'll build
 
@@ -23,12 +23,12 @@ Scalekit lets you build MCP servers that manage authentication, create personali
 
 > **Gmail is the only connector that does not require dashboard setup.** All other connectors (including Google Calendar) must be created in the Scalekit Dashboard before use:
 >
-> Go to **Scalekit Dashboard → Agent Auth → Connections → + Create Connection → Select connector** → Set `Connection Name` → Save
+> Go to **Scalekit Dashboard → AgentKit → Connections → + Create Connection → Select connector** → Set `Connection Name` → Save
 
 > **Important**: The **Connection Name** you set in the dashboard is exactly what you use as the `connection_name` parameter in your code. They must match exactly.
 
 For this example, create the Google Calendar connector:
-- [ ] **Google Calendar connector**: Scalekit Dashboard → Agent Auth → Connections → Create Connection → Google Calendar → `Connection Name = MY_CALENDAR` → Save
+- [ ] **Google Calendar connector**: Scalekit Dashboard → AgentKit → Connections → Create Connection → Google Calendar → `Connection Name = MY_CALENDAR` → Save
 
 ## Step 1 — Set up your environment
 

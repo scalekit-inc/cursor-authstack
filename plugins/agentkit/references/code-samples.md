@@ -1,6 +1,6 @@
 # Code Samples
 
-This reference provides implementation examples for integrating Scalekit Agent Auth across different frameworks, languages, and use cases.
+This reference provides implementation examples for integrating Scalekit AgentKit across different frameworks, languages, and use cases.
 
 ## Quick Start Guide
 
@@ -129,7 +129,7 @@ response = agent_executor.invoke({
 
 ### Repository: [scalekit-inc/google-adk-agent-example](https://github.com/scalekit-inc/google-adk-agent-example.git)
 
-**Overview:** Minimal Gmail-powered agent demonstrating Agent Auth integration with Google's Agent Development Kit. Entire integration fits in one file.
+**Overview:** Minimal Gmail-powered agent demonstrating AgentKit integration with Google's Agent Development Kit. Entire integration fits in one file.
 
 **Requirements:**
 - Python >= 3.11

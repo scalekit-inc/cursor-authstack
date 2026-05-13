@@ -1,27 +1,27 @@
-# Providers
+# Connectors Overview
 
-Providers in Agent Auth represent third-party applications that your users can connect to and interact with through Scalekit's unified API. Each provider offers a set of tools and capabilities that can be executed on behalf of connected users.
+Connectors in AgentKit represent third-party applications that your users can connect to and interact with through Scalekit's unified API. Each connector offers a set of tools and capabilities that can be executed on behalf of connected users.
 
-## What are providers?
+## What are connectors?
 
-Providers are pre-configured integrations with popular third-party applications that enable your users to:
+Connectors are pre-configured integrations with popular third-party applications that enable your users to:
 
 - **Connect their accounts** using secure authentication methods
 - **Execute tools and actions** through a unified API interface
 - **Access data and functionality** from external applications
 - **Maintain secure connections** with proper authorization scopes
 
-## Supported providers
+## Supported connectors
 
-Agent Auth supports a wide range of popular business applications:
+AgentKit supports a wide range of popular business applications:
 
-| Category | Providers |
+| Category | Connectors |
 |---|---|
-| **Google Workspace** | Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Forms, Google Meet, Google Ads |
+| **Google Workspace** | Gmail, Google Calendar, Google Drive, Google Docs, Google Sheets, Google Slides, Google Forms, Google Meet, Google Ads |
 | **Microsoft 365** | Outlook, OneDrive, SharePoint, Microsoft Teams, Microsoft Excel, Microsoft Word, OneNote |
 | **Communication** | Slack, Zoom |
 | **Project Management** | Jira, Asana, Trello, Monday.com, ClickUp, Linear, Confluence |
-| **CRM & Sales** | Salesforce, HubSpot, Zendesk, Freshdesk, Intercom, Gong |
+| **CRM & Sales** | Salesforce, HubSpot, Zendesk, Freshdesk, Intercom, Gong, Attention, Chorus, Clari Copilot |
 | **Development** | GitHub |
 | **Productivity** | Notion, Airtable, Dropbox |
 | **Data & Analytics** | BigQuery, Snowflake, Fathom |
@@ -29,19 +29,19 @@ Agent Auth supports a wide range of popular business applications:
 
 For per-connector tool specifications, see [agent-connectors/README.md](agent-connectors/README.md).
 
-## Provider capabilities
+## Connector capabilities
 
-Each provider offers different capabilities based on their API and authentication model.
+Each connector offers different capabilities based on its API and authentication model.
 
 ### Authentication methods
 
-- **OAuth 2.0**: Standard method for all supported providers
+- **OAuth 2.0**: Standard method for all supported connectors
 
 ### Available tools
 
-Providers expose various tools that can be executed through Agent Auth:
+Connectors expose various tools that can be executed through AgentKit:
 
-> **Note:** Tool availability depends on the specific provider and the user's permissions within that application.
+> **Note:** Tool availability depends on the specific connector, the current live catalog, and the user's permissions within that application.
 
 **Common tool categories:**
 
@@ -53,25 +53,25 @@ Providers expose various tools that can be executed through Agent Auth:
 
 ### Rate limits and quotas
 
-Each provider has different rate limits and quotas:
+Each connector has different rate limits and quotas:
 
 - **API rate limits**: Requests per minute/hour limitations
 - **Data quotas**: Storage or transfer limitations
 - **Feature restrictions**: Premium features or enterprise-only capabilities
 
-## Provider configuration
+## Connector configuration
 
-### Adding a provider
+### Adding a connector
 
-1. **Navigate to providers** in your Agent Auth dashboard
-2. **Select provider** from the available options
+1. **Navigate to connections** in your AgentKit dashboard
+2. **Select connector** from the available options
 3. **Configure settings** such as scopes and permissions
 4. **Set up authentication** — configure OAuth client credentials if using custom OAuth apps
-5. **Test connection** to verify provider setup
+5. **Test connection** to verify connector setup
 
-### Provider settings
+### Connector settings
 
-Each provider can be configured with:
+Each connector can be configured with:
 
 **Authentication settings:**
 - OAuth client credentials (if using custom OAuth apps)
@@ -83,11 +83,11 @@ Each provider can be configured with:
 - Request throttling settings
 - Backoff strategies for rate limit errors
 
-## Working with provider APIs
+## Working with connector APIs
 
 ### API integration
 
-The Scalekit SDK abstracts provider-specific APIs — the workflow (create account → authorize → fetch token → call API) is identical for all providers. Only the downstream API call changes:
+The Scalekit SDK abstracts connector-specific APIs — the workflow (create account → authorize → fetch token → call API) is identical for all connectors. Only the downstream API call changes:
 
 ```python
 # Step 3: Fetch token (always call this immediately before the API call)
@@ -98,7 +98,7 @@ response = actions.get_connected_account(
 tokens = response.connected_account.authorization_details["oauth_token"]
 access_token = tokens["access_token"]
 
-# Step 4: Call the provider API with the token
+# Step 4: Call the connector API with the token
 headers = {"Authorization": f"Bearer {access_token}"}
 ```
 
@@ -106,7 +106,7 @@ Scalekit automatically refreshes expired tokens on `get_connected_account` — n
 
 ### Error handling
 
-Agent Auth normalizes provider-specific errors into consistent error responses:
+AgentKit normalizes connector-specific errors into consistent error responses:
 
 ```javascript
 {
@@ -122,7 +122,7 @@ Agent Auth normalizes provider-specific errors into consistent error responses:
 }
 ```
 
-## Provider-specific considerations
+## Connector-specific considerations
 
 ### Google Workspace
 
@@ -167,23 +167,24 @@ Agent Auth normalizes provider-specific errors into consistent error responses:
 
 ## Monitoring and analytics
 
-### Provider health
+### Connector health
 
-- **API uptime**: Track provider API availability
+- **API uptime**: Track connector API availability
 - **Response times**: Monitor latency for different operations
-- **Error rates**: Track errors by provider and tool type
+- **Error rates**: Track errors by connector and tool type
 - **Rate limit usage**: Monitor quota consumption
 
 ### Usage analytics
 
-- **Popular providers**: Which providers are used most
+- **Popular connectors**: Which connectors are used most
 - **Tool usage**: Which tools are executed most frequently
-- **User adoption**: How many users connect to each provider
-- **Error patterns**: Common failure modes by provider
+- **User adoption**: How many users connect to each connector
+- **Error patterns**: Common failure modes by connector
 
 ## Related documentation
 
-- [connections.md](connections.md) — how to configure authentication credentials for a provider
+- [connections.md](connections.md) — how to configure authentication credentials for a connector
 - [connected-accounts.md](connected-accounts.md) — per-user account lifecycle and token management
-- [agent-connectors/README.md](agent-connectors/README.md) — detailed API tools for each provider
+- [agent-connectors/README.md](agent-connectors/README.md) — detailed API tools for each connector
+- [tool-discovery.md](tool-discovery.md) — live discovery model for current tools and schemas
 - [code-samples.md](code-samples.md) — implementation examples by framework
