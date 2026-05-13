@@ -86,7 +86,12 @@ for plugin_slug in "${installed_plugins[@]}"; do
 done
 
 echo
-echo "Next steps:"
+echo "To activate the plugins in Cursor:"
 echo "  1. Restart Cursor or run Developer: Reload Window."
 echo "  2. Open Settings > Plugins."
-echo "  3. Verify the Scalekit plugins load their rules, skills, and MCP servers."
+echo "  3. Verify agentkit and saaskit are listed and enabled."
+echo "  4. Set update policy to \"Auto-update (recommended)\" to stay current."
+echo
+echo "To verify:"
+echo "  Check that rules, skills, and MCP servers load for each plugin."
+echo "  Try a skill: ask \"help me integrate agentkit\" or \"test my auth setup\"."
