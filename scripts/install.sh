@@ -86,12 +86,11 @@ for plugin_slug in "${installed_plugins[@]}"; do
 done
 
 echo
-echo "To activate the plugins in Cursor:"
-echo "  1. Restart Cursor or run Developer: Reload Window."
-echo "  2. Open Settings > Plugins."
-echo "  3. Verify agentkit and saaskit are listed and enabled."
-echo "  4. Set update policy to \"Auto-update (recommended)\" to stay current."
+echo "What to do next in Cursor:"
+echo "  - Restart Cursor (or reload the window)."
+echo "  - Look for \"agentkit\" and \"saaskit\" in your plugin settings."
+echo "  - Make sure both are installed and enabled."
+echo "  - Set the update policy to auto-update so you always have the latest skills."
 echo
-echo "To verify:"
-echo "  Check that rules, skills, and MCP servers load for each plugin."
-echo "  Try a skill: ask \"help me integrate agentkit\" or \"test my auth setup\"."
+echo "To verify it works:"
+echo "  Ask Cursor to \"help me integrate agentkit\" or \"test my auth setup\"."
