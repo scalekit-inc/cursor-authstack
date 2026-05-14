@@ -211,19 +211,19 @@ Production-ready MCP server implementations with different OAuth integration app
    - 5-line OAuth integration with Scalekit provider
    - Automatic token validation and scope enforcement
    - [todo-fastmcp](https://github.com/scalekit-inc/mcp-auth-demos/tree/main/todo-fastmcp)
-   - Skill: [add-auth-fastmcp](../skills/add-auth-fastmcp/SKILL.md)
+   - Reference: [fastmcp-reference.md](../skills/adding-mcp-oauth/fastmcp-reference.md)
 
 2. **Express.js (Full Control)**
    - Manual OAuth middleware implementation
    - Modular architecture with complete control
    - [greeting-mcp-node](https://github.com/scalekit-inc/mcp-auth-demos/tree/main/greeting-mcp-node)
-   - Skill: [express-mcp-server](../skills/express-mcp-server/SKILL.md)
+   - Reference: [express-reference.md](../skills/adding-mcp-oauth/express-reference.md)
 
 3. **FastAPI + FastMCP (Python)**
    - Custom middleware with FastMCP tooling
    - Ideal for existing FastAPI applications
    - [greeting-mcp-python](https://github.com/scalekit-inc/mcp-auth-demos/tree/main/greeting-mcp-python)
-   - Skill: [fastapi-fastmcp](../skills/fastapi-fastmcp/SKILL.md)
+   - Reference: [fastapi-reference.md](../skills/adding-mcp-oauth/fastapi-reference.md)
 
 4. **Scalekit MCP Server (Production Reference)**
    - Official Scalekit implementation with advanced patterns

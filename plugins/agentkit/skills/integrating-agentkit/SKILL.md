@@ -289,16 +289,16 @@ agent = Agent(
 response = agent.process_request("fetch my last 5 unread emails and summarize them")
 ```
 
-For more examples and framework-specific patterns, see [code-samples.md](../references/code-samples.md).
+For more examples and framework-specific patterns, see [code-samples.md](../../references/code-samples.md).
 
 ## Deep reference
 
-For comprehensive documentation on connected accounts lifecycle, states, and API usage, see [connected-accounts.md](../references/connected-accounts.md).
+For comprehensive documentation on connected accounts lifecycle, states, and API usage, see [connected-accounts.md](../../references/connected-accounts.md).
 
-For code samples and implementation examples by framework, see [code-samples.md](../references/code-samples.md).
+For code samples and implementation examples by framework, see [code-samples.md](../../references/code-samples.md).
 
-For an overview of supported providers and their capabilities, see [connectors.md](../references/connectors.md).
+For an overview of supported providers and their capabilities, see [connectors.md](../../references/connectors.md).
 
-For comprehensive token management including refresh, security, and monitoring, see [token-management.md](../references/token-management.md).
+For comprehensive token management including refresh, security, and monitoring, see [token-management.md](../../references/token-management.md).
 
-For configuring your own OAuth credentials per connector (whitelabeling, dedicated quotas), see [byoc.md](../references/byoc.md).
+For configuring your own OAuth credentials per connector (whitelabeling, dedicated quotas), see [byoc.md](../../references/byoc.md).
