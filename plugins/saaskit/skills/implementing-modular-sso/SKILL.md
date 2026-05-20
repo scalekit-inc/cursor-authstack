@@ -404,7 +404,7 @@ Prevent failed redirects by checking SSO configuration before redirecting:
 
 **Node.js:**
 ```javascript
-const domain = email.split('@').toLowerCase();
+const domain = email.split('@')[1].toLowerCase();
 
 const connections = await scalekit.connections.listConnectionsByDomain({
   domain
@@ -571,4 +571,3 @@ app.post('/logout', (req, res) => {
 **Use progressive enhancement**: Start with basic SSO, add advanced features iteratively
 
 **Monitor authentication flows**: Track success rates and common failure points
-```
