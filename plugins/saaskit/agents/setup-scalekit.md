@@ -22,15 +22,20 @@ Workflow:
    - SCALEKIT_ENVIRONMENT_URL
    - SCALEKIT_CLIENT_ID
    - SCALEKIT_CLIENT_SECRET
-3) Install the SDK (pick the official package for that language).
-4) Initialize the SDK client using env vars.
-5) Verify credentials by listing organizations with a small page size.
-6) If verification fails, diagnose systematically:
+3) Install the Scalekit CLI globally:
+   ```bash
+   npm i -g @scalekit-inc/cli
+   ```
+   The CLI provides commands for managing environments, organizations, and auth configurations from the terminal.
+4) Install the SDK (pick the official package for that language).
+5) Initialize the SDK client using env vars.
+6) Verify credentials by listing organizations with a small page size.
+7) If verification fails, diagnose systematically:
    - Wrong environment URL (dev vs prod)
    - Missing env vars in current shell/process
    - Incorrect client id/secret
    - Network/DNS issues
-7) Only after verification succeeds, proceed to feature work and route to the correct Skill:
+8) Only after verification succeeds, proceed to feature work and route to the correct Skill:
    - SSO → plugins/saaskit/skills/implementing-modular-sso/SKILL.md
    - SCIM → plugins/saaskit/skills/implementing-scim-provisioning/SKILL.md
    - MCP auth → plugins/saaskit/skills/adding-mcp-oauth/SKILL.md
