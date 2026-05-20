@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Scalekit Auth Stack for Cursor — AgentKit and SaaSKit plugins. Add agent auth, tool calling, SSO, SCIM, MCP auth, and session management from Cursor.",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
