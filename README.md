@@ -98,9 +98,9 @@ If you prefer a manual install, each plugin can also be copied into `~/.cursor/p
 #### Documentation
 
 - [Scalekit Documentation](https://docs.scalekit.com) — Complete guides and API reference
-- [SSO Quickstart](https://docs.scalekit.com/sso/quickstart/) — Implement enterprise SSO
-- [MCP Auth Guide](https://docs.scalekit.com/mcp-auth/quickstart/) — Secure MCP servers
-- [Agent Auth Guide](https://docs.scalekit.com/agent-auth/quickstart/) — Authentication for AI agents
+- [Modular SSO guide](https://docs.scalekit.com/authenticate/sso/add-modular-sso/) — Implement enterprise SSO
+- [MCP Auth guide](https://docs.scalekit.com/authenticate/mcp/quickstart/) — Secure MCP servers
+- [AgentKit overview](https://docs.scalekit.com/agentkit/overview.md) — Connect agents to authenticated tools
 
 #### Resources
 
