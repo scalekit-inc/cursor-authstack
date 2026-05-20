@@ -252,5 +252,5 @@ https://github.com/scalekit-inc/mcp-auth-demos
 ## Additional Resources
 
 - [Scalekit Documentation](https://docs.scalekit.com)
-- [MCP Authentication Guide](https://docs.scalekit.com/mcp/authentication)
+- [MCP Authentication Guide](https://docs.scalekit.com/authenticate/mcp/quickstart/)
 - [OAuth 2.1 Specification](https://oauth.net/2.1/)
