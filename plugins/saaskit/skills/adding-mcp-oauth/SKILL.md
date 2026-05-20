@@ -1,6 +1,6 @@
 ---
 name: adding-mcp-oauth
-description: Add production-ready OAuth 2.1 authorization to an MCP server using Scalekit. Use this when you need MCP clients (Claude Desktop, Cursor, VS Code, or any MCP client) to discover your authorization server via .well-known/oauth-protected-resource, and when you need to validate Bearer access tokens (aud/iss/exp/scope) before executing MCP tools.
+description: Adds OAuth 2.1 authorization to Model Context Protocol servers using Scalekit. Covers Streamable HTTP transport, token validation middleware, and scope-based authorization for Node.js and Python. Use when securing MCP servers, implementing authentication for AI hosts like Claude Desktop or Cursor.
 ---
 
 # Add OAuth 2.1 authorization to MCP servers (Scalekit)

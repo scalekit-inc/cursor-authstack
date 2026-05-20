@@ -1,6 +1,6 @@
 ---
 name: integrating-agentkit
-description: Integrates Scalekit AgentKit into a project to handle OAuth flows, token storage, and automatic refresh for third-party connectors (Gmail, Slack, Notion, Calendar, and 100+ more). Use when a user needs to connect to an external service, authorize OAuth access, fetch access or refresh tokens, execute API calls on behalf of a user, or build agents with LangChain or Google ADK.
+description: Integrates Scalekit AgentKit into a project so an agent can create connections, authorize users, discover tools, and execute authenticated tool calls on their behalf. Use when a user needs to set up a connection, create a connected account, generate an authorization link, or wire AgentKit tools into application code or an agent framework.
 ---
 
 # AgentKit Integration

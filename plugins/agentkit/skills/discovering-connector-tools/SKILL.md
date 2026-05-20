@@ -1,6 +1,6 @@
 ---
 name: discovering-connector-tools
-description: Discovers live tools for a Scalekit AgentKit connector and explains their input and output schemas. Use when a user asks what tools are available for Gmail, Slack, Salesforce, or another connector, wants to inspect input_schema or output_schema, or needs help narrowing the tool set for an agent.
+description: Discovers live tools for a Scalekit AgentKit connector and explains their input and output schemas. Use when a user asks what tools are available for Gmail, Slack, Salesforce, or another connector, wants to inspect `input_schema` or `output_schema`, or needs help narrowing the tool set for an agent.
 ---
 
 # Discovering Connector Tools

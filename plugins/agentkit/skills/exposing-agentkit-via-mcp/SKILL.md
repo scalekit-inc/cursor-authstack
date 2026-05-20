@@ -1,6 +1,6 @@
 ---
 name: exposing-agentkit-via-mcp
-description: Guides developers through creating a Scalekit MCP server with authenticated tool access. Use when building an MCP server, exposing AgentKit tools over MCP, or connecting AI agents via LangChain/LangGraph MCP adapters.
+description: Guides developers through configuring a Scalekit AgentKit MCP endpoint with authenticated tool access. Use when exposing AgentKit tools over MCP, generating per-user MCP URLs, or connecting AI agents via LangChain or LangGraph MCP adapters.
 ---
 
 # Building an Agent MCP Server

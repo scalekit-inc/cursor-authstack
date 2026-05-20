@@ -1,6 +1,6 @@
 ---
 name: implementing-scim-provisioning
-description: Implements SCIM user provisioning using Scalekit's Directory API and webhooks. Use when the user asks to add SCIM, directory sync, user provisioning, deprovisioning, or lifecycle management to their existing application.
+description: Implements SCIM user provisioning using Scalekit directory API and webhooks for real-time user and group lifecycle management. Use when adding directory sync, user provisioning, or automated user lifecycle management.
 ---
 
 # SCIM Provisioning with Scalekit

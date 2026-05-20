@@ -1,6 +1,6 @@
 ---
 name: implementing-saaskit
-description: Implements Scalekit SaaSKit authentication including sign-up, login, logout, and secure session management using JWT tokens. Use when building or integrating user authentication with the Scalekit SDK across Node.js, Python, Go, or Java — or when the user asks about auth flows, OAuth callbacks, token refresh, or session handling with Scalekit.
+description: Implements Scalekit SaaSKit authentication (sign-up, login, logout, sessions) using JWT tokens across Node.js, Python, Go, Java, or PHP. Use when building or integrating user authentication with Scalekit, setting up OAuth callbacks, token refresh, or session handling.
 ---
 
 # Scalekit Full-Stack Authentication
