@@ -35,7 +35,7 @@ plugins/<plugin-name>/
 
 ### agentkit
 
-Authentication for AI agents. OAuth flows, token vault, 40+ connectors, tool discovery, and live testing.
+Authentication for AI agents. OAuth flows, token vault, 100+ connectors, tool discovery, and live testing.
 
 Skills:
 - `integrating-agentkit` — core integration: SDK setup, connected accounts, OAuth flows, token fetching, agent frameworks

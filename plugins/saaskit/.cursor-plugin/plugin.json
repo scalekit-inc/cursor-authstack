@@ -4,7 +4,7 @@
   "description": "Production-ready auth for B2B SaaS apps. Login, sessions, SSO (Okta, Azure AD, Google), SCIM provisioning, RBAC, MCP server auth, and API key management.",
   "version": "2.0.0",
   "author": {
-    "name": "Scalekit",
+    "name": "Scalekit Inc.",
     "email": "hi@scalekit.com"
   },
   "homepage": "https://docs.scalekit.com",
