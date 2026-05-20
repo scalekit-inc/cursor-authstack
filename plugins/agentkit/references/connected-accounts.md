@@ -255,7 +255,7 @@ const refreshed = await agentConnect.accounts.refreshTokens('account_id');
 const tokenStatus = await agentConnect.accounts.getTokenStatus('account_id');
 ```
 
-For detailed token management including automatic refresh, error handling, and security, see [token-management.md](token-management.md).
+Connected accounts automatically handle token refresh. Scalekit re-fetches tokens when they expire, so always call `get_connected_account` before making API calls to get the latest valid token.
 
 ### Account status monitoring
 
