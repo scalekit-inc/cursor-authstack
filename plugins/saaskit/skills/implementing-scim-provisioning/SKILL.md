@@ -1,6 +1,6 @@
 ---
 name: implementing-scim-provisioning
-description: Implements SCIM user provisioning using Scalekit directory API and webhooks for real-time user and group lifecycle management. Use when adding directory sync, user provisioning, or automated user lifecycle management.
+description: Sets up SCIM endpoints, handles directory webhook events, maps user attributes, and manages group memberships using Scalekit's Directory API. Use when the user asks to add SCIM, directory sync, user provisioning, deprovisioning, or lifecycle management to their application.
 ---
 
 # SCIM Provisioning with Scalekit
@@ -32,7 +32,7 @@ Detect the project's language/framework from existing files (`package.json`, `re
 | Stack | Install command |
 |-------|----------------|
 | Node.js | `npm install @scalekit-sdk/node` |
-| Python | `pip install scalekit-sdk-python` |
+| Python | `pip install scalekit-sdk` |
 | Go | `go get github.com/scalekit/scalekit-go` |
 | Java | Add `com.scalekit:scalekit-sdk` to `pom.xml` or `build.gradle` |
 
@@ -78,7 +78,7 @@ scalekit_client = ScalekitClient(
 )
 ```
 
-For Go and Java patterns, see [REFERENCE.md](REFERENCE.md).
+For Go and Java patterns, see the [Scalekit SDK documentation](https://docs.scalekit.com/apis).
 
 ---
 
@@ -166,7 +166,7 @@ async def scalekit_webhook(request: Request):
     return JSONResponse(status_code=201, content={"status": "processed"})
 ```
 
-For Go and Java, see [REFERENCE.md](REFERENCE.md).
+For Go and Java, see the [Scalekit SDK documentation](https://docs.scalekit.com/apis).
 
 ---
 
@@ -223,8 +223,26 @@ After deploying the webhook endpoint:
 
 ---
 
-## Reference files
+## Customer self-serve SCIM setup (admin portal)
 
-- Full Go/Java SDK examples → [REFERENCE.md](REFERENCE.md)
-- Webhook event payload schemas → [EVENTS.md](EVENTS.md)
-- RBAC group-to-role mapping patterns → [RBAC.md](RBAC.md)
+Let customers configure directory sync via an embedded admin portal. Generate a single-use portal link server-side, embed it in an iframe, and handle `SCIM_CONFIGURED` and `SESSION_EXPIRED` postMessage events.
+
+```javascript
+// Server: generate link (single-use, regenerate on each page load)
+const { location } = await scalekit.organization.generatePortalLink(organizationId);
+
+// Client: embed in iframe
+// <iframe src="{{ portalLink }}" width="100%" height="600px" allow="clipboard-write"></iframe>
+```
+
+Register your app domain in **Dashboard > Developers > API Configuration > Redirect URIs** or the iframe will be blocked.
+
+For no-code onboarding: **Dashboard > Organizations** → select org → **Generate link** → share URL directly. Also share [SCIM setup guides](https://docs.scalekit.com/guides/integrations/scim-integrations/) for IdP-specific steps.
+
+---
+
+## Reference
+
+- Full Go/Java SDK examples → [Scalekit SDK documentation](https://docs.scalekit.com/apis)
+- Webhook event payload schemas → [Scalekit webhook events](https://docs.scalekit.com/directory/scim/quickstart/)
+- RBAC group-to-role mapping patterns → [Role based access control](https://docs.scalekit.com/authenticate/fsa/rbac/)

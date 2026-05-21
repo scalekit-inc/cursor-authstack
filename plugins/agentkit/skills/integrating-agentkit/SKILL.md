@@ -55,32 +55,11 @@ const { connectedAccounts } = scalekitClient;
 
 </tabs>
 
-## Connector setup
-
-Before integrating with a connector, follow these steps in the Scalekit Dashboard:
-
-> **Gmail is the only connector that does not require dashboard setup.** Skip this section for Gmail.
-
-For all other connectors (Slack, Notion, Google Calendar, etc.):
-
-1. Go to **Scalekit Dashboard → AgentKit → Connections**
-2. Click **+ Create Connection**
-3. Select the connector you want to use
-4. Enter a **Connection Name** (e.g., `MY_SLACK`, `MY_NOTION`)
-5. Click **Save**
-
-> **Important**: The **Connection Name** you set in the dashboard is exactly what you use as the `connection_name` parameter in your code. They must match exactly.
-
 ## Integration workflow
 
-**First, ask the user:**
+> **Gmail works without dashboard setup.** All other connectors must be configured first: **Dashboard → AgentKit → Connections → + Create Connection**. The **Connection Name** in the dashboard must match `connection_name` in code exactly.
 
-> Are you starting fresh and want a quick test with Gmail, or are you integrating directly into your project?
-
-- If **fresh / quick test**: Use the Gmail example below (Gmail is the only connector that doesn't require dashboard setup)
-- If **integrating directly**: Create your connector in the Scalekit Dashboard first, then adapt the workflow below to your connector
-
-Copy this checklist and check off steps as you complete them:
+Copy this checklist:
 
 ```
 AgentKit Integration Progress:
@@ -159,7 +138,7 @@ refresh_token = tokens["refresh_token"]
 ```typescript
 const accountResponse = await connectedAccounts.getConnectedAccountByIdentifier({
   connector: 'gmail',
-  identifier: 'user@example.com',
+  identifier: 'user_123',
 });
 const authDetails = accountResponse?.connectedAccount?.authorizationDetails;
 const accessToken = authDetails?.details?.case === 'oauthToken'
@@ -223,7 +202,7 @@ for (const msg of messages) {
 Replace `"gmail"` with any supported connector name: `slack`, `notion`, `calendar`, etc.
 The SDK workflow (Steps 1–3) is identical for all connectors. Only the downstream API call (Step 4) changes.
 
-For connector-specific API details, see the [AgentKit connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
+For connector-specific API details, see the [Scalekit Connectors catalog](https://docs.scalekit.com/agentkit/connectors/).
 
 ## Building agents
 
@@ -289,14 +268,20 @@ agent = Agent(
 response = agent.process_request("fetch my last 5 unread emails and summarize them")
 ```
 
-For more examples and framework-specific patterns, see [code-samples.md](../../references/code-samples.md).
+For more examples and framework-specific patterns, see the [AgentKit code samples](https://docs.scalekit.com/agentkit/code-samples/).
 
 ## Deep reference
 
-For comprehensive documentation on connected accounts lifecycle, states, and API usage, see [connected-accounts.md](../../references/connected-accounts.md).
+- AgentKit overview: [docs.scalekit.com/agentkit/overview](https://docs.scalekit.com/agentkit/overview/)
+- Connections: [docs.scalekit.com/agentkit/connections](https://docs.scalekit.com/agentkit/connections/)
+- Connected accounts: [docs.scalekit.com/agentkit/connected-accounts](https://docs.scalekit.com/agentkit/connected-accounts/)
+- Tool discovery: [docs.scalekit.com/agentkit/tool-discovery](https://docs.scalekit.com/agentkit/tool-discovery/)
+- Connectors catalog: [docs.scalekit.com/agentkit/connectors](https://docs.scalekit.com/agentkit/connectors/)
+- BYOC (Bring Your Own Credentials): [docs.scalekit.com/agentkit/byoc](https://docs.scalekit.com/agentkit/launch-checklist/byoc/)
 
-For code samples and implementation examples by framework, see [code-samples.md](../../references/code-samples.md).
+## When to switch skills
 
-For an overview of supported providers and their capabilities, see [connectors.md](../../references/connectors.md).
-
-For configuring your own OAuth credentials per connector (whitelabeling, dedicated quotas), see [byoc.md](../../references/byoc.md).
+- Use `discovering-connector-tools` when the user needs the current tool catalog or schema.
+- Use the Scalekit MCP server (`https://mcp.scalekit.com`) to validate a tool call interactively.
+- Use `exposing-agentkit-via-mcp` when the user wants AgentKit tools exposed over MCP.
+- Use `sk-actions-custom-provider` to create custom connectors.

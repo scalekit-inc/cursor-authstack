@@ -1,7 +1,6 @@
 ---
 name: testing-auth-setup
 description: Validates a Scalekit auth integration by running the dryrun CLI against a live environment. Use when the user says "test my auth", "verify SSO setup", "check my login flow", "dryrun", or wants to confirm their Scalekit credentials and configuration are working.
-argument-hint: "[fsa|sso]"
 ---
 
 # Testing Auth Setup
@@ -26,16 +25,14 @@ npm i -g @scalekit-inc/cli
 Confirm these environment variables are available:
 
 - `SCALEKIT_ENV_URL` — your Scalekit environment URL
-- `SCALEKIT_CLIENT_ID` — your client ID from app.scalekit.com → Settings
-
-If either is missing, ask the user to provide them. Do not write credentials into source-controlled files.
+- `SCALEKIT_CLIENT_ID` — your client ID from app.scalekit.com > Settings
 
 ## Running the test
 
 ### Full-stack auth (fsa)
 
 ```bash
-npx @scalekit-sdk/dryrun --env_url=<env_url> --client_id=<client_id> --mode=fsa
+npx @scalekit-sdk/dryrun --env_url=$SCALEKIT_ENV_URL --client_id=$SCALEKIT_CLIENT_ID --mode=fsa
 ```
 
 ### Enterprise SSO
@@ -43,7 +40,7 @@ npx @scalekit-sdk/dryrun --env_url=<env_url> --client_id=<client_id> --mode=fsa
 Requires an `organization_id` — ask for it if not provided.
 
 ```bash
-npx @scalekit-sdk/dryrun --env_url=<env_url> --client_id=<client_id> --mode=sso --organization_id=<organization_id>
+npx @scalekit-sdk/dryrun --env_url=$SCALEKIT_ENV_URL --client_id=$SCALEKIT_CLIENT_ID --mode=sso --organization_id=<organization_id>
 ```
 
 ## Choosing the mode
@@ -59,3 +56,9 @@ If the user doesn't specify a mode:
 - Show the command output.
 - Explain what passed and what failed in plain language.
 - If the test fails, suggest specific next steps based on the error (missing redirect URI, invalid credentials, organization not found, etc.).
+
+## When to switch skills
+
+- Use `implementing-saaskit` for the initial auth setup.
+- Use `implementing-modular-sso` for SSO configuration.
+- Use `production-readiness-saaskit` for a full pre-launch review.

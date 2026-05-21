@@ -3,7 +3,7 @@ name: implementing-saaskit
 description: Implements Scalekit SaaSKit authentication (sign-up, login, logout, sessions) using JWT tokens across Node.js, Python, Go, Java, or PHP. Use when building or integrating user authentication with Scalekit, setting up OAuth callbacks, token refresh, or session handling.
 ---
 
-# Scalekit Full-Stack Authentication
+# Scalekit SaaSKit (Full-Stack Authentication)
 
 ## Setup
 
@@ -93,3 +93,25 @@ All SDK methods follow the same pattern across languages with minor naming conve
 ## What this unlocks
 
 One integration enables: Magic Link & OTP, social sign-ins, enterprise SSO, workspaces, MCP authentication, SCIM provisioning, and user management.
+
+## Framework-specific references
+
+- Python (Django/FastAPI/Flask): use `implementing-saaskit-python` skill
+- Next.js: use `implementing-saaskit-nextjs` skill
+- Go (Gin): see [go-reference.md](go-reference.md)
+- Spring Boot: see [springboot-reference.md](springboot-reference.md)
+- Laravel: see [laravel-reference.md](laravel-reference.md)
+
+## Deep reference
+
+- Auth flows: [docs.scalekit.com/authenticate/fsa/quickstart](https://docs.scalekit.com/authenticate/fsa/quickstart/)
+- Sessions: [docs.scalekit.com/authenticate/fsa/sessions](https://docs.scalekit.com/authenticate/fsa/sessions/)
+- Access control: [docs.scalekit.com/authenticate/fsa/access-control](https://docs.scalekit.com/authenticate/fsa/access-control/)
+
+## When to switch skills
+
+- Use `managing-saaskit-sessions` for token storage, refresh middleware, and session auditing.
+- Use `implementing-access-control` for RBAC and permission enforcement.
+- Use `implementing-modular-sso` for enterprise SSO on top of SaaSKit.
+- Use `migrating-to-saaskit` when replacing an existing auth system.
+- Use `production-readiness-saaskit` before going live.
