@@ -26,6 +26,8 @@ Select **AgentKit** from the Scalekit Auth Stack.
 
 ## Skills Reference
 
+- `/agentkit:setup`
+  New to AgentKit? Start here — answers 2 questions and routes you to the right skill.
 - `integrating-agentkit` — Core integration: SDK setup, connected accounts, OAuth flows, token fetching, downstream API calls, and agent framework examples.
 - `discovering-connector-tools` — Uses live AgentKit metadata to find tools, inspect schemas, and narrow the tool set.
 - `exposing-agentkit-via-mcp` — Exposes AgentKit tools through MCP for MCP-compatible runtimes.

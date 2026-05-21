@@ -24,6 +24,8 @@ Select **SaaSKit** from the Scalekit Auth Stack.
 
 ## Skills Reference
 
+- `/saaskit:setup`
+  New to SaaSKit? Start here — answers 3 questions and routes you to the right skill.
 - `implementing-saaskit` — Core auth flow: login, signup, callback, token exchange, session management, logout.
 - `implementing-modular-sso` — Enterprise SSO (SAML/OIDC) with 20+ IdPs, admin portal, JIT provisioning.
 - `implementing-scim-provisioning` — SCIM 2.0 webhooks, user/group lifecycle, directory API.
