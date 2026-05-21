@@ -24,6 +24,7 @@ Install from the Scalekit Auth Stack marketplace in Cursor.
 - `migrating-to-saaskit` — Migration planner from existing auth systems.
 - `testing-auth-setup` — Validates auth config with the dryrun CLI.
 - `production-readiness-saaskit` — Unified production checklist across all SaaSKit domains.
+- `/saaskit:scalekit-code-doctor` — Diagnoses SDK usage issues, import errors, and common mistakes across AgentKit and SaaSKit.
 
 ## Configuration
 

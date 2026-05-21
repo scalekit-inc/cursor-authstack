@@ -18,6 +18,7 @@ Install from the Scalekit Auth Stack marketplace in Cursor.
 - `discovering-connector-tools` — Uses live AgentKit metadata to find tools, inspect schemas, and narrow the tool set.
 - `exposing-agentkit-via-mcp` — Exposes AgentKit tools through MCP for MCP-compatible runtimes.
 - `production-readiness-agentkit` — Structured production readiness checklist for AgentKit integrations.
+- `/agentkit:scalekit-code-doctor` — Diagnoses SDK usage issues, import errors, and common mistakes across AgentKit and SaaSKit.
 
 ## Configuration
 
