@@ -10,7 +10,19 @@ The plugin treats live AgentKit metadata as the source of truth for tool names, 
 
 ## Installation
 
-Install from the Scalekit Auth Stack marketplace in Cursor.
+1. Run the bootstrap installer in your terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/scalekit-inc/cursor-authstack/main/install.sh | bash
+```
+
+2. Open Cursor, then run the plugin install command from the Command Palette:
+
+```
+> Plugins: Install Plugin
+```
+
+Select **AgentKit** from the Scalekit Auth Stack.
 
 ## Skills Reference
 
@@ -18,7 +30,8 @@ Install from the Scalekit Auth Stack marketplace in Cursor.
 - `discovering-connector-tools` — Uses live AgentKit metadata to find tools, inspect schemas, and narrow the tool set.
 - `exposing-agentkit-via-mcp` — Exposes AgentKit tools through MCP for MCP-compatible runtimes.
 - `production-readiness-agentkit` — Structured production readiness checklist for AgentKit integrations.
-- `/agentkit:scalekit-code-doctor` — Diagnoses SDK usage issues, import errors, and common mistakes across AgentKit and SaaSKit.
+- `/saaskit:scalekit-code-doctor (cross-plugin)`
+  Diagnoses SDK usage issues, import errors, and common mistakes across AgentKit and SaaSKit. Requires the saaskit plugin.
 
 ## Configuration
 

@@ -8,7 +8,19 @@ One integration enables: magic link & OTP, social sign-ins, enterprise SSO, work
 
 ## Installation
 
-Install from the Scalekit Auth Stack marketplace in Cursor.
+1. Run the bootstrap installer in your terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/scalekit-inc/cursor-authstack/main/install.sh | bash
+```
+
+2. Open Cursor, then run the plugin install command from the Command Palette:
+
+```
+> Plugins: Install Plugin
+```
+
+Select **SaaSKit** from the Scalekit Auth Stack.
 
 ## Skills Reference
 

@@ -552,7 +552,7 @@ app.post('/logout', (req, res) => {
 
 **Connection Selector Precedence**: connectionId > organizationId > loginHint
 
-**Token Expiration**: ID tokens expire in 15 minutes, access tokens in 24 hours
+**Token Expiration**: ID tokens expire in 15 minutes, access tokens in 5 minutes (configurable in dashboard)
 
 **Admin Portal Events**: Listen for `sso.enabled`, `sso.disabled`, `session.expired`
 

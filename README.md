@@ -91,6 +91,8 @@ If you prefer a manual install, each plugin can also be copied into `~/.cursor/p
 - Cursor installed and configured
 - Project where you want to add authentication
 
+> **Windows**: install.sh requires macOS or Linux (or WSL on Windows). Native Windows PowerShell install is not yet supported.
+
 ---
 
 ### Helpful Links
