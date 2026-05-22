@@ -37,14 +37,14 @@ McpServer → Tool Handler → Response
 
 ### Environment Configuration
 
-Required variables: `SK_ENV_URL`, `SK_CLIENT_ID`, `SK_CLIENT_SECRET`, `EXPECTED_AUDIENCE`, `PROTECTED_RESOURCE_METADATA`, `PORT`.
+Required variables: `SCALEKIT_ENVIRONMENT_URL`, `SCALEKIT_CLIENT_ID`, `SCALEKIT_CLIENT_SECRET`, `EXPECTED_AUDIENCE`, `PROTECTED_RESOURCE_METADATA`, `PORT`.
 
 ### Scalekit Client Initialization
 
 ```typescript
 import { ScalekitClient } from '@scalekit-sdk/node';
 
-const scalekit = new ScalekitClient(SK_ENV_URL, SK_CLIENT_ID, SK_CLIENT_SECRET);
+const scalekit = new ScalekitClient(SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET);
 ```
 
 Initialize once at module level for connection pooling.

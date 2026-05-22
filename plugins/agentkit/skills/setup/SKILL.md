@@ -49,7 +49,7 @@ SCALEKIT_CLIENT_SECRET=<from dashboard>
 
 Get these from [app.scalekit.com](https://app.scalekit.com) → Developers → Settings → API Credentials.
 
-The Scalekit MCP server (`https://mcp.scalekit.com`) is pre-configured in `.mcp.json`. Cursor handles OAuth 2.1 auth automatically — no additional setup needed.
+The Scalekit MCP server (`https://mcp.scalekit.com`) is pre-configured in `mcp.json`. Cursor handles OAuth 2.1 auth automatically — no additional setup needed.
 
 ---
 

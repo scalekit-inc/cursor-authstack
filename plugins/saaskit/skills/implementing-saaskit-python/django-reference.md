@@ -69,7 +69,7 @@ def login(request: HttpRequest):
     state = secrets.token_urlsafe(32)
     request.session["oauth_state"] = state
     sc = get_scalekit_client()
-    auth_url = sc.get_authorization_url(REDIRECT_URI, options={"state": state})
+    auth_url = sc.get_authorization_url(REDIRECT_URI, options=AuthorizationUrlOptions(state=state))
     return redirect(auth_url)
 
 def callback(request: HttpRequest):
@@ -92,7 +92,7 @@ def callback(request: HttpRequest):
 def logout(request: HttpRequest):
     id_token = request.session.get("id_token", "")
     sc = get_scalekit_client()
-    logout_url = sc.get_logout_url({"post_logout_redirect_uri": "http://localhost:8000"})
+    logout_url = sc.get_logout_url(options=LogoutUrlOptions(post_logout_redirect_uri="http://localhost:8000"))
     request.session.flush()
     return redirect(logout_url)
 ```
@@ -233,12 +233,12 @@ def dashboard(request):
 def idp_login(request):
     sc = get_scalekit_client()
     claims = sc.get_idp_initiated_login_claims(request.GET.get("idp_initiated_login", ""))
-    options = {}
-    if claims.organization_id: options["organization_id"] = claims.organization_id
-    if claims.connection_id:   options["connection_id"]   = claims.connection_id
-    if claims.login_hint:      options["login_hint"]      = claims.login_hint
-    auth_url = sc.get_authorization_url(REDIRECT_URI, options=options)
-    return redirect(auth_url)
+    opts = AuthorizationUrlOptions(
+        organization_id=claims.organization_id or None,
+        connection_id=claims.connection_id or None,
+        login_hint=claims.login_hint or None,
+    )
+    return redirect(sc.get_authorization_url(REDIRECT_URI, options=opts))
 ```
 
 ## Reference

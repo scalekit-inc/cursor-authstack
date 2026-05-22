@@ -48,7 +48,7 @@ async def auth_middleware(request: Request, call_next):
     token = auth_header.split("Bearer ", 1)[1].strip()
 
     options = TokenValidationOptions(
-        issuer=SK_ENV_URL,
+        issuer=SCALEKIT_ENVIRONMENT_URL,
         audience=[EXPECTED_AUDIENCE]
     )
 

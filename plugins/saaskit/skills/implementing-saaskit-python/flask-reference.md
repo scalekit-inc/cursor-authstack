@@ -68,7 +68,7 @@ GET /auth/logout
 def login():
     state = secrets.token_urlsafe(32)
     session["oauth_state"] = state
-    auth_url = sc.get_authorization_url(REDIRECT_URI, options={"state": state})
+    auth_url = sc.get_authorization_url(REDIRECT_URI, options=AuthorizationUrlOptions(state=state))
     return redirect(auth_url)
 
 @app.get("/auth/callback")
@@ -90,7 +90,7 @@ def callback():
 @app.get("/auth/logout")
 def logout():
     id_token = session.get("id_token", "")
-    logout_url = sc.get_logout_url({"post_logout_redirect_uri": "http://localhost:5000"})
+    logout_url = sc.get_logout_url(options=LogoutUrlOptions(post_logout_redirect_uri="http://localhost:5000"))
     session.clear()
     return redirect(logout_url)
 ```
@@ -185,11 +185,12 @@ app.register_blueprint(auth_bp)
 @app.get("/auth/idp-login")
 def idp_login():
     claims = sc.get_idp_initiated_login_claims(request.args.get("idp_initiated_login", ""))
-    options = {}
-    if claims.organization_id: options["organization_id"] = claims.organization_id
-    if claims.connection_id:   options["connection_id"]   = claims.connection_id
-    if claims.login_hint:      options["login_hint"]      = claims.login_hint
-    return redirect(sc.get_authorization_url(REDIRECT_URI, options=options))
+    opts = AuthorizationUrlOptions(
+        organization_id=claims.organization_id or None,
+        connection_id=claims.connection_id or None,
+        login_hint=claims.login_hint or None,
+    )
+    return redirect(sc.get_authorization_url(REDIRECT_URI, options=opts))
 ```
 
 ### Cache-Control: no-store on protected responses
