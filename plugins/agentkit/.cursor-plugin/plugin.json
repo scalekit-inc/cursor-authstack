@@ -7,7 +7,7 @@
     "name": "Scalekit Inc.",
     "email": "hi@scalekit.com"
   },
-  "homepage": "https://docs.scalekit.com/agentkit/overview.md",
+  "homepage": "https://docs.scalekit.com/agentkit/overview",
   "repository": "https://github.com/scalekit-inc/cursor-authstack",
   "license": "MIT",
   "keywords": ["scalekit", "agentkit", "agent-auth", "oauth", "connectors", "tool-calling"],

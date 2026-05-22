@@ -257,7 +257,7 @@ server.tool(
 
 ```bash
 # Scalekit Configuration
-SCALEKIT_ENV_URL=https://your-env.scalekit.com
+SCALEKIT_ENVIRONMENT_URL=https://your-env.scalekit.com
 SCALEKIT_CLIENT_ID=your_client_id
 SCALEKIT_CLIENT_SECRET=your_client_secret
 
@@ -276,7 +276,7 @@ NODE_ENV=production
 ```typescript
 const config = {
   port: parseInt(process.env.PORT || '3002', 10),
-  environmentUrl: process.env.SCALEKIT_ENV_URL,
+  environmentUrl: process.env.SCALEKIT_ENVIRONMENT_URL,
   clientId: process.env.SCALEKIT_CLIENT_ID,
   clientSecret: process.env.SCALEKIT_CLIENT_SECRET,
   expectedAudience: process.env.EXPECTED_AUDIENCE,

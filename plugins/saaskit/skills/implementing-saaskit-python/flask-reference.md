@@ -9,7 +9,7 @@ pip install scalekit-sdk-python python-dotenv flask flask-session
 ## Environment variables
 
 ```env
-SCALEKIT_ENV_URL=https://your-env.scalekit.dev
+SCALEKIT_ENVIRONMENT_URL=https://your-env.scalekit.dev
 SCALEKIT_CLIENT_ID=your_client_id
 SCALEKIT_CLIENT_SECRET=your_client_secret
 SCALEKIT_REDIRECT_URI=http://localhost:5000/auth/callback
@@ -39,7 +39,7 @@ Session(app)
 REDIRECT_URI = os.getenv("SCALEKIT_REDIRECT_URI", "http://localhost:5000/auth/callback")
 
 sc = ScalekitClient(
-    env_url=os.getenv("SCALEKIT_ENV_URL"),
+    env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
     client_id=os.getenv("SCALEKIT_CLIENT_ID"),
     client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
 )
@@ -142,7 +142,7 @@ def dashboard():
 
 ```
 - [ ] Step 1: pip install scalekit-sdk-python python-dotenv flask flask-session
-- [ ] Step 2: Set SCALEKIT_ENV_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET, SECRET_KEY in .env
+- [ ] Step 2: Set SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET, SECRET_KEY in .env
 - [ ] Step 3: Initialize ScalekitClient at module level (single instance per process)
 - [ ] Step 4: Configure Flask-Session with filesystem or Redis backend
 - [ ] Step 5: Implement /auth/login, /auth/callback, /auth/logout routes

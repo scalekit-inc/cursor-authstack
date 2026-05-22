@@ -1,6 +1,6 @@
 # Scalekit API Reference — Compact Lookup
 
-This file contains every correct SDK method signature and REST endpoint. Use it as ground truth when generating or reviewing Scalekit code. If a method isn't listed here, do NOT assume it exists — verify against the live SDK source or `https://docs.scalekit.com/apis.md`.
+This file contains every correct SDK method signature and REST endpoint. Use it as ground truth when generating or reviewing Scalekit code. If a method isn't listed here, do NOT assume it exists — verify against the live SDK source or `https://docs.scalekit.com/apis`.
 
 ---
 
@@ -12,7 +12,7 @@ This file contains every correct SDK method signature and REST endpoint. Use it 
 import { ScalekitClient } from '@scalekit-sdk/node';
 
 const scalekit = new ScalekitClient(
-  process.env.SCALEKIT_ENV_URL!,       // string — environment URL
+  process.env.SCALEKIT_ENVIRONMENT_URL!,       // string — environment URL
   process.env.SCALEKIT_CLIENT_ID!,     // string — client ID
   process.env.SCALEKIT_CLIENT_SECRET!  // string — client secret
 );
@@ -24,7 +24,7 @@ const scalekit = new ScalekitClient(
 from scalekit import ScalekitClient
 
 scalekit_client = ScalekitClient(
-    os.environ.get('SCALEKIT_ENV_URL'),       # str — environment URL
+    os.environ.get('SCALEKIT_ENVIRONMENT_URL'),       # str — environment URL
     os.environ.get('SCALEKIT_CLIENT_ID'),     # str — client ID
     os.environ.get('SCALEKIT_CLIENT_SECRET')  # str — client secret
 )
@@ -36,7 +36,7 @@ scalekit_client = ScalekitClient(
 import scalekit "github.com/scalekit-inc/scalekit-sdk-go/v2"
 
 client := scalekit.NewScalekitClient(
-    os.Getenv("SCALEKIT_ENV_URL"),       // string — environment URL
+    os.Getenv("SCALEKIT_ENVIRONMENT_URL"),       // string — environment URL
     os.Getenv("SCALEKIT_CLIENT_ID"),     // string — client ID
     os.Getenv("SCALEKIT_CLIENT_SECRET"), // string — client secret
 )
@@ -48,7 +48,7 @@ client := scalekit.NewScalekitClient(
 import com.scalekit.ScalekitClient;
 
 ScalekitClient client = new ScalekitClient(
-    System.getenv("SCALEKIT_ENV_URL"),       // String — environment URL
+    System.getenv("SCALEKIT_ENVIRONMENT_URL"),       // String — environment URL
     System.getenv("SCALEKIT_CLIENT_ID"),     // String — client ID
     System.getenv("SCALEKIT_CLIENT_SECRET")  // String — client secret
 );
@@ -60,13 +60,13 @@ ScalekitClient client = new ScalekitClient(
 
 | Variable | Purpose | Format |
 |----------|---------|--------|
-| `SCALEKIT_ENV_URL` | Environment URL | `https://<subdomain>.scalekit.com` (prod) or `https://<subdomain>.scalekit.dev` (dev) |
+| `SCALEKIT_ENVIRONMENT_URL` | Environment URL | `https://<subdomain>.scalekit.com` (prod) or `https://<subdomain>.scalekit.dev` (dev) |
 | `SCALEKIT_CLIENT_ID` | Client ID | String from dashboard |
 | `SCALEKIT_CLIENT_SECRET` | Client secret | String from dashboard |
 | `SCALEKIT_REDIRECT_URI` | OAuth callback URL | Must exactly match dashboard config |
 | `SCALEKIT_WEBHOOK_SECRET` | Webhook signing secret | Format: `whsec_...` |
 
-Note: The REST API docs use `SCALEKIT_ENVIRONMENT_URL` in some examples. Both `SCALEKIT_ENV_URL` and `SCALEKIT_ENVIRONMENT_URL` are acceptable — just be consistent within a project.
+Note: The REST API docs use `SCALEKIT_ENVIRONMENT_URL` in some examples. Both `SCALEKIT_ENVIRONMENT_URL` and `SCALEKIT_ENVIRONMENT_URL` are acceptable — just be consistent within a project.
 
 ---
 

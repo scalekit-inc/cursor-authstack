@@ -9,7 +9,7 @@ pip install scalekit-sdk-python python-dotenv django
 ## Environment variables
 
 ```env
-SCALEKIT_ENV_URL=https://your-env.scalekit.dev
+SCALEKIT_ENVIRONMENT_URL=https://your-env.scalekit.dev
 SCALEKIT_CLIENT_ID=your_client_id
 SCALEKIT_CLIENT_SECRET=your_client_secret
 SCALEKIT_REDIRECT_URI=http://localhost:8000/auth/callback
@@ -31,7 +31,7 @@ def get_scalekit_client() -> ScalekitClient:
     global _sc
     if _sc is None:
         _sc = ScalekitClient(
-            env_url=os.getenv("SCALEKIT_ENV_URL"),
+            env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
             client_id=os.getenv("SCALEKIT_CLIENT_ID"),
             client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
         )
@@ -180,7 +180,7 @@ SESSION_COOKIE_AGE = 86400     # 24 hours
 
 ```
 - [ ] Step 1: pip install scalekit-sdk-python python-dotenv django
-- [ ] Step 2: Set SCALEKIT_ENV_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET in .env
+- [ ] Step 2: Set SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET in .env
 - [ ] Step 3: Create auth_client.py with singleton ScalekitClient
 - [ ] Step 4: Implement login, callback, logout views
 - [ ] Step 5: Add ScalekitAuthMiddleware to MIDDLEWARE in settings.py

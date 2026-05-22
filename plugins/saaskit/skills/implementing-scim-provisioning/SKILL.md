@@ -33,7 +33,7 @@ Detect the project's language/framework from existing files (`package.json`, `re
 |-------|----------------|
 | Node.js | `npm install @scalekit-sdk/node` |
 | Python | `pip install scalekit-sdk-python` |
-| Go | `go get github.com/scalekit/scalekit-go` |
+| Go | `go get github.com/scalekit-inc/scalekit-sdk-go/v2` |
 | Java | Add `com.scalekit:scalekit-sdk-java` to `pom.xml` or `build.gradle` |
 
 ---

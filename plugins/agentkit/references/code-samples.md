@@ -36,7 +36,7 @@ Choose the right sample based on your needs:
 OPENAI_API_KEY=your_openai_api_key_here
 SCALEKIT_CLIENT_ID=your_scalekit_client_id
 SCALEKIT_CLIENT_SECRET=your_scalekit_client_secret
-SCALEKIT_ENV_URL=your_scalekit_environment_url
+SCALEKIT_ENVIRONMENT_URL=your_scalekit_environment_url
 ```
 
 **Installation:**
@@ -50,17 +50,17 @@ python main.py
 **1. SDK Initialization**
 ```python
 import os
-import scalekit.client
+from scalekit import ScalekitClient
 from dotenv import load_dotenv
 
 load_dotenv()
 
-scalekit = scalekit.client.ScalekitClient(
+sk_client = ScalekitClient(
     client_id=os.getenv("SCALEKIT_CLIENT_ID"),
     client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
-    env_url=os.getenv("SCALEKIT_ENV_URL"),
+    env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
 )
-actions = scalekit.actions
+actions = sk_client.actions
 ```
 
 **2. OAuth Authorization Flow**
@@ -143,7 +143,7 @@ GOOGLE_GENAI_USE_VERTEXAI=FALSE
 GOOGLE_API_KEY=your_google_api_key_here
 SCALEKIT_CLIENT_ID=your_scalekit_client_id
 SCALEKIT_CLIENT_SECRET=your_scalekit_client_secret
-SCALEKIT_ENV_URL=your_scalekit_environment_url
+SCALEKIT_ENVIRONMENT_URL=your_scalekit_environment_url
 ```
 
 **Installation:**
@@ -167,7 +167,7 @@ connection_name = "gmail"
 client = scalekit.client.ScalekitClient(
     client_id=os.getenv("SCALEKIT_CLIENT_ID"),
     client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
-    env_url=os.getenv("SCALEKIT_ENV_URL")
+    env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL")
 )
 
 # Generate OAuth authorization link
@@ -498,10 +498,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-scalekit = scalekit.client.ScalekitClient(
+sk_client = ScalekitClient(
     client_id=os.getenv("SCALEKIT_CLIENT_ID"),
     client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
-    env_url=os.getenv("SCALEKIT_ENV_URL"),
+    env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL"),
 )
 ```
 
@@ -532,6 +532,6 @@ scalekit = scalekit.client.ScalekitClient(
 ### Troubleshooting
 1. **Connection not ACTIVE:** Check OAuth flow completed in browser
 2. **Token expired:** Scalekit auto-refreshes tokens; call `get_connected_account` before tool calls
-3. **Invalid credentials:** Verify `SCALEKIT_ENV_URL`, `SCALEKIT_CLIENT_ID`, and `SCALEKIT_CLIENT_SECRET`
+3. **Invalid credentials:** Verify `SCALEKIT_ENVIRONMENT_URL`, `SCALEKIT_CLIENT_ID`, and `SCALEKIT_CLIENT_SECRET`
 4. **Tool not found:** Verify connection name matches Scalekit Dashboard exactly
 5. **Scope errors:** Check connection configuration has required scopes in Scalekit Dashboard

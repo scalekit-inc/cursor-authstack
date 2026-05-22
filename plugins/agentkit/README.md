@@ -39,7 +39,7 @@ Select **AgentKit** from the Scalekit Auth Stack.
 
 Required environment variables:
 
-- `SCALEKIT_ENV_URL`
+- `SCALEKIT_ENVIRONMENT_URL`
 - `SCALEKIT_CLIENT_ID`
 - `SCALEKIT_CLIENT_SECRET`
 
@@ -47,8 +47,8 @@ Get these from [app.scalekit.com](https://app.scalekit.com): Developers → Sett
 
 ## Helpful Links
 
-- [AgentKit overview](https://docs.scalekit.com/agentkit/overview.md)
-- [AgentKit quickstart](https://docs.scalekit.com/agentkit/quickstart.md)
+- [AgentKit overview](https://docs.scalekit.com/agentkit/overview)
+- [AgentKit quickstart](https://docs.scalekit.com/agentkit/quickstart)
 - [LLM docs map](https://docs.scalekit.com/llms.txt)
 - [Docs sitemap](https://docs.scalekit.com/sitemap-0.xml)
 

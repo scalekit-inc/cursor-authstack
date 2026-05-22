@@ -41,7 +41,7 @@ import { ScalekitClient } from '@scalekit-sdk/node';
 import crypto from 'crypto';
 
 const scalekit = new ScalekitClient(
-  process.env.SCALEKIT_ENV_URL!,
+  process.env.SCALEKIT_ENVIRONMENT_URL!,
   process.env.SCALEKIT_CLIENT_ID!,
   process.env.SCALEKIT_CLIENT_SECRET!
 );
@@ -93,7 +93,7 @@ Check these categories in order:
 
 **3. Security** — Cookies: `httpOnly`, `secure`, `sameSite: 'lax'`. State: cryptographically random. Redirects: only relative paths. Secrets: from env vars. Webhooks: signature verified before processing.
 
-**4. Environment** — `SCALEKIT_ENV_URL`, `SCALEKIT_CLIENT_ID`, `SCALEKIT_CLIENT_SECRET`. Redirect URI matches dashboard. Domain format: `https://<subdomain>.scalekit.com`.
+**4. Environment** — `SCALEKIT_ENVIRONMENT_URL`, `SCALEKIT_CLIENT_ID`, `SCALEKIT_CLIENT_SECRET`. Redirect URI matches dashboard. Domain format: `https://<subdomain>.scalekit.com`.
 
 **5. Best practices** — Client is singleton. Error handling uses typed exceptions. `window.location.href` for OAuth redirects (not `router.push`).
 
@@ -107,7 +107,7 @@ Resolution order when a method isn't in `references/REFERENCE.md`:
 |----------|--------|
 | 1 | Embedded `references/REFERENCE.md` |
 | 2 | Live SDK reference: `https://raw.githubusercontent.com/scalekit-inc/scalekit-sdk-{node,python,go,java}/main/REFERENCE.md` |
-| 3 | REST API: `https://docs.scalekit.com/apis.md` |
+| 3 | REST API: `https://docs.scalekit.com/apis` |
 | 4 | State explicitly: "This method could not be verified." |
 
 Never output code containing an unverified method call.
@@ -116,7 +116,7 @@ Never output code containing an unverified method call.
 
 | Resource | URL |
 |----------|-----|
-| REST API reference | `https://docs.scalekit.com/apis.md` |
+| REST API reference | `https://docs.scalekit.com/apis` |
 | LLM doc index | `https://docs.scalekit.com/llms.txt` |
 | SaaSKit docs | `https://docs.scalekit.com/_llms-txt/saaskit-complete.txt` |
 | AgentKit docs | `https://docs.scalekit.com/_llms-txt/agentkit.txt` |

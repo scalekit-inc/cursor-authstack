@@ -15,14 +15,12 @@ import { ScalekitClient } from 'scalekit';               // wrong package name
 import { ScalekitClient } from 'scalekit-sdk-node';      // wrong package name
 ```
 
-**Correct (either works):**
+**Correct:**
 ```typescript
 import { ScalekitClient } from '@scalekit-sdk/node';
-// OR
-import { Scalekit } from '@scalekit-sdk/node';  // official alias, also valid
 ```
 
-Both `ScalekitClient` and `Scalekit` are valid named exports from `@scalekit-sdk/node`. The SDK source exports both. Use whichever is consistent with your codebase.
+Only `ScalekitClient` is the canonical named export from `@scalekit-sdk/node`. Older docs sometimes show `Scalekit` as an alias — treat that as deprecated/wrong; the runtime export is `ScalekitClient`. Always use `ScalekitClient`.
 
 ### Python
 
@@ -335,7 +333,7 @@ const scalekit = new ScalekitClient(
 **Correct:**
 ```typescript
 const scalekit = new ScalekitClient(
-  process.env.SCALEKIT_ENV_URL!,
+  process.env.SCALEKIT_ENVIRONMENT_URL!,
   process.env.SCALEKIT_CLIENT_ID!,
   process.env.SCALEKIT_CLIENT_SECRET!
 );
@@ -394,7 +392,7 @@ OAuth redirects are full HTTP redirects to an external domain (Scalekit/IdP). Cl
 
 | Wrong | Correct | Issue |
 |-------|---------|-------|
-| `SCALEKIT_URL` | `SCALEKIT_ENV_URL` | Missing `ENV_` |
+| `SCALEKIT_URL` | `SCALEKIT_ENVIRONMENT_URL` | Missing `ENV_` |
 | `SCALEKIT_SECRET` | `SCALEKIT_CLIENT_SECRET` | Missing `CLIENT_` |
 | `SCALEKIT_ID` | `SCALEKIT_CLIENT_ID` | Missing `CLIENT_` |
 | `SCALEKIT_CALLBACK_URL` | `SCALEKIT_REDIRECT_URI` | Wrong name entirely |
@@ -419,7 +417,7 @@ app.get('/api/data', async (req, res) => {
 ```typescript
 // Module-level singleton
 const scalekit = new ScalekitClient(
-  process.env.SCALEKIT_ENV_URL!,
+  process.env.SCALEKIT_ENVIRONMENT_URL!,
   process.env.SCALEKIT_CLIENT_ID!,
   process.env.SCALEKIT_CLIENT_SECRET!
 );

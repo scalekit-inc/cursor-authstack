@@ -30,7 +30,7 @@ Requires Spring Boot 3.2+ and Java 17+.
 
 ```yaml
 scalekit:
-  env-url: ${SCALEKIT_ENV_URL}
+  env-url: ${SCALEKIT_ENVIRONMENT_URL}
   client-id: ${SCALEKIT_CLIENT_ID}
   client-secret: ${SCALEKIT_CLIENT_SECRET}
   redirect-uri: ${SCALEKIT_REDIRECT_URI:http://localhost:8080/login/oauth2/code/scalekit}
