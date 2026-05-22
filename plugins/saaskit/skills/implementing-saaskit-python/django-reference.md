@@ -69,7 +69,9 @@ def login(request: HttpRequest):
     state = secrets.token_urlsafe(32)
     request.session["oauth_state"] = state
     sc = get_scalekit_client()
-    auth_url = sc.get_authorization_url(REDIRECT_URI, options=AuthorizationUrlOptions(state=state))
+    options = AuthorizationUrlOptions()
+    options.state = state
+    auth_url = sc.get_authorization_url(REDIRECT_URI, options)
     return redirect(auth_url)
 
 def callback(request: HttpRequest):
