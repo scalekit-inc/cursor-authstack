@@ -92,8 +92,9 @@ location = portal.location
 ### Handle portal events
 
 ```js
+const SCALEKIT_ORIGIN = "https://your-env.scalekit.com";
 window.addEventListener('message', (event) => {
-  if (event.origin !== process.env.SCALEKIT_ENVIRONMENT_URL) return;
+  if (event.origin !== SCALEKIT_ORIGIN) return;
   if (event.data.type === 'SESSION_EXPIRED') {
     // Re-fetch portal link and reload iframe
   }

@@ -73,7 +73,7 @@ server.tool(
   },
   async ({ environmentId, name }, { token }) => {
     // Token already validated by middleware
-    const organization = await scalekit.createOrganization({
+    const organization = await scalekit.organization.createOrganization({
       environmentId,
       name,
     });

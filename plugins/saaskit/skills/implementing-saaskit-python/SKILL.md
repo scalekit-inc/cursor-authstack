@@ -25,7 +25,7 @@ pip install scalekit-sdk-python python-dotenv
 ```python
 import os
 from dotenv import load_dotenv
-from scalekit import ScalekitClient
+from scalekit import ScalekitClient, AuthorizationUrlOptions, LogoutUrlOptions
 
 load_dotenv()
 
@@ -69,7 +69,7 @@ sc = ScalekitClient(
 @app.get("/auth/login")
 def login(response: Response):
     state = secrets.token_urlsafe(32)
-    response = RedirectResponse(sc.get_authorization_url(REDIRECT_URI, {"state": state}))
+    response = RedirectResponse(sc.get_authorization_url(REDIRECT_URI, AuthorizationUrlOptions(state=state)))
     response.set_cookie("oauth_state", state, httponly=True, samesite="lax", secure=True)
     return response
 
@@ -86,7 +86,7 @@ def callback(request: Request, code: str, state: str):
 
 @app.get("/auth/logout")
 def logout(request: Request):
-    logout_url = sc.get_logout_url({"post_logout_redirect_uri": "http://localhost:8000"})
+    logout_url = sc.get_logout_url(LogoutUrlOptions(post_logout_redirect_uri="http://localhost:8000"))
     # Clear your session here
     return RedirectResponse(logout_url)
 ```

@@ -157,21 +157,21 @@ adk run scalekit_tool_agent
 **1. Complete Agent Implementation**
 ```python
 from google.adk.agents import Agent
-import scalekit.client
+from scalekit import ScalekitClient
 import os
 
 identifier = "user-1234"
 connection_name = "gmail"
 
 # Initialize Scalekit client
-client = scalekit.client.ScalekitClient(
+sk_client = ScalekitClient(
     client_id=os.getenv("SCALEKIT_CLIENT_ID"),
     client_secret=os.getenv("SCALEKIT_CLIENT_SECRET"),
     env_url=os.getenv("SCALEKIT_ENVIRONMENT_URL")
 )
 
 # Generate OAuth authorization link
-auth = client.actions.get_authorization_link(
+auth = sk_client.actions.get_authorization_link(
     identifier=identifier,
     connection_name=connection_name
 )
@@ -181,7 +181,7 @@ print(f"🔗 Visit this URL to authorize the gmail connection:\n\n   {auth.link}
 input("✅ Press Enter after authorization...")
 
 # Generate Gmail tools with authenticated access
-gmail_tools = client.actions.google.get_tools(
+gmail_tools = sk_client.actions.google.get_tools(
     providers=["GMAIL"],
     identifier=identifier,
     page_size=100

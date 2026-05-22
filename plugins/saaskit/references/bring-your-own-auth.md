@@ -64,13 +64,13 @@ from scalekit import ScalekitClient
 import os
 
 scalekit = ScalekitClient(
-    os.environ.get('SCALEKIT_ENVIRONMENT_URL'),
-    os.environ.get('SCALEKIT_CLIENT_ID'),
-    os.environ.get('SCALEKIT_CLIENT_SECRET')
+    env_url=os.environ.get('SCALEKIT_ENVIRONMENT_URL'),
+    client_id=os.environ.get('SCALEKIT_CLIENT_ID'),
+    client_secret=os.environ.get('SCALEKIT_CLIENT_SECRET')
 )
 
 # Update login user details
-scalekit.auth.update_login_user_details(
+scalekit.update_login_user_details(
     connection_id="{{connection_id}}",
     login_request_id="{{login_request_id}}",
     user={
@@ -95,7 +95,7 @@ const scalekit = new ScalekitClient(
   process.env.SCALEKIT_CLIENT_SECRET
 );
 
-await scalekit.auth.updateLoginUserDetails(
+await scalekit.updateLoginUserDetails(
   '{{connection_id}}',
   '{{login_request_id}}',
   {

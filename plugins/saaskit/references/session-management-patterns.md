@@ -103,7 +103,7 @@ res.cookie('access_token', tokens.access_token, {
 res.cookie('refresh_token', tokens.refresh_token, {
   httpOnly: true,
   secure: true,
-  sameSite: 'strict',
+  sameSite: 'lax',
   path: '/auth/refresh', // scope to refresh endpoint only
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 });
@@ -123,7 +123,7 @@ async function scalekitSessionMiddleware(req, res, next) {
   if (!accessToken) return res.redirect('/login');
 
   try {
-    const payload = await scalekit.auth.validateAccessToken(accessToken);
+    const payload = await scalekit.validateAccessToken(accessToken);
     req.user = payload;
     return next();
   } catch (err) {
@@ -139,10 +139,10 @@ async function handleTokenRefresh(req, res, next) {
   if (!refreshToken) return res.redirect('/login');
 
   try {
-    const newTokens = await scalekit.auth.refreshTokens(refreshToken);
+    const newTokens = await scalekit.refreshAccessToken(refreshToken);
     res.cookie('access_token', newTokens.access_token, { /* same options */ });
     res.cookie('refresh_token', newTokens.refresh_token, { /* same options */ });
-    req.user = await scalekit.auth.validateAccessToken(newTokens.access_token);
+    req.user = await scalekit.validateAccessToken(newTokens.access_token);
     return next();
   } catch (err) {
     res.clearCookie('access_token');
@@ -170,9 +170,7 @@ lucia) that want enterprise SSO without rebuilding auth.
 app.get('/auth/callback', async (req, res) => {
   const { code } = req.query;
 
-  const { user, idTokenClaims } = await scalekit.auth.authenticateWithCode(code, {
-    redirectUri: process.env.REDIRECT_URI
-  });
+  const { user, idTokenClaims } = await scalekit.authenticateWithCode(code, process.env.REDIRECT_URI);
 
   // Create session using YOUR existing mechanism
   req.session.userId = user.id;

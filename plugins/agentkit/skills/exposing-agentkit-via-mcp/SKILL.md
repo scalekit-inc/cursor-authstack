@@ -44,7 +44,7 @@ Add these imports to `main.py`:
 import os
 import asyncio
 from dotenv import load_dotenv
-import scalekit.client
+from scalekit import ScalekitClient
 from scalekit.actions.models.mcp_config import McpConfigConnectionToolMapping
 from scalekit.actions.types import GetMcpInstanceAuthStateResponse
 from langgraph.prebuilt import create_react_agent

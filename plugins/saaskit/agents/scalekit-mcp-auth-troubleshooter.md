@@ -21,14 +21,14 @@ Ask (or infer from context) which MCP client is failing: MCP Inspector, Cursor, 
 Also capture: MCP server URL, Scalekit environment URL, and whether this is dev or prod.
 
 ## 2) Confirm the auth handshake basics (server-side)
-Goal: verify the server challenges unauthenticated requests correctly and points clients to resource metadata. [web:45]
+Goal: verify the server challenges unauthenticated requests correctly and points clients to resource metadata.
 
 Run these checks (use curl if available, otherwise browser devtools):
-- Request the MCP server base URL and confirm it returns HTTP 401. [web:45]
-- Confirm the response includes a `WWW-Authenticate` (or `www-authenticate`) header containing `resource_metadata="<metadata-url>"`. [web:51]
+- Request the MCP server base URL and confirm it returns HTTP 401.
+- Confirm the response includes a `WWW-Authenticate` (or `www-authenticate`) header containing `resource_metadata="<metadata-url>"`.
 - Open the `<metadata-url>` in a browser and confirm the JSON matches the Scalekit dashboard configuration for that environment.
 
-If the 401/header/metadata checks fail, classify as “metadata/handshake misconfiguration” and recommend fixing the protected resource metadata wiring first. [web:45]
+If the 401/header/metadata checks fail, classify as “metadata/handshake misconfiguration” and recommend fixing the protected resource metadata wiring first.
 
 ## 3) If MCP Inspector won’t connect: check cached client state
 If the handshake looks correct but the client still fails, suspect the client cached an old domain/metadata after a domain change.
@@ -69,5 +69,21 @@ Fixes:
 - Windows: enable default app management permissions (Settings → Privacy → App permissions), then restart the client.
 - Linux: ensure `xdg-open` exists (`which xdg-open`) and is on PATH, then restart the client.
 
-## 8) OAuth registration mismatch (when relevant)
-If you see errors like “Incompat
+## 8) OAuth registration mismatch
+If you see errors like "Incompatible client registration", "invalid_client", or "redirect_uri_mismatch" during the OAuth flow:
+
+Diagnosis:
+- The MCP server's OAuth client registration in Scalekit may have stale callback URLs, wrong scopes, or a mismatched client ID/secret.
+- A recent domain or environment URL change may not have propagated to the OAuth client settings.
+
+Resolution:
+- In Scalekit Dashboard > Authentication > Applications, confirm the OAuth client redirect URIs include the MCP client callback URL.
+- Verify `SCALEKIT_ENVIRONMENT_URL`, `SCALEKIT_CLIENT_ID`, and `SCALEKIT_CLIENT_SECRET` match the dashboard values exactly (no trailing slashes, correct environment).
+- If the environment was recently changed (e.g., dev to prod), re-register the OAuth client or update the existing registration.
+- Clear any cached client state (see section 3) and retry.
+
+## 9) Deliver the fix plan
+After identifying the root cause, present:
+1. **Diagnosis** -- one-sentence summary of the failure mode.
+2. **Fix steps** -- numbered, smallest-change-first.
+3. **Verification** -- curl or client commands the user can run to confirm the fix works.
