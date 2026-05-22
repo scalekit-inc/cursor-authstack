@@ -31,7 +31,7 @@ If answers aren't already clear from context, ask:
 |---|---|
 | Connect users to third-party apps, execute tools on their behalf | `/agentkit:integrating-agentkit` |
 | Discover available tools for a connector, inspect schemas | `/agentkit:discovering-connector-tools` |
-| Expose AgentKit tools over MCP for Claude Desktop, Cursor, VS Code | `/agentkit:exposing-agentkit-via-mcp` |
+| Expose AgentKit tools over MCP for Cursor, Claude Desktop, VS Code | `/agentkit:exposing-agentkit-via-mcp` |
 | Pre-launch checklist for production | `/agentkit:production-readiness-agentkit` |
 | SDK errors, wrong imports, broken auth calls | `/saaskit:scalekit-code-doctor` |
 
@@ -42,14 +42,14 @@ If answers aren't already clear from context, ask:
 Before starting any skill, verify credentials exist:
 
 ```bash
-SCALEKIT_ENV_URL=https://your-env.scalekit.dev
+SCALEKIT_ENVIRONMENT_URL=https://your-env.scalekit.dev
 SCALEKIT_CLIENT_ID=<from dashboard>
 SCALEKIT_CLIENT_SECRET=<from dashboard>
 ```
 
 Get these from [app.scalekit.com](https://app.scalekit.com) → Developers → Settings → API Credentials.
 
-The Scalekit MCP server (`https://mcp.scalekit.com`) is pre-configured in `.mcp.json`. Claude Code handles OAuth 2.1 auth automatically — no additional setup needed.
+The Scalekit MCP server (`https://mcp.scalekit.com`) is pre-configured in `.mcp.json`. Cursor handles OAuth 2.1 auth automatically — no additional setup needed.
 
 ---
 

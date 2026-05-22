@@ -42,9 +42,9 @@ Required variables: `SK_ENV_URL`, `SK_CLIENT_ID`, `SK_CLIENT_SECRET`, `EXPECTED_
 ### Scalekit Client Initialization
 
 ```typescript
-import { Scalekit } from '@scalekit-sdk/node';
+import { ScalekitClient } from '@scalekit-sdk/node';
 
-const scalekit = new Scalekit(SK_ENV_URL, SK_CLIENT_ID, SK_CLIENT_SECRET);
+const scalekit = new ScalekitClient(SK_ENV_URL, SK_CLIENT_ID, SK_CLIENT_SECRET);
 ```
 
 Initialize once at module level for connection pooling.

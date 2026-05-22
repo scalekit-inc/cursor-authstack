@@ -1,6 +1,6 @@
 # Python Frameworks
 
-SaaSKit integration for Django, FastAPI, and Flask. All three use `scalekit-sdk-python` (or `scalekit` on PyPI) and share the same SDK methods, but differ in session handling and middleware patterns.
+SaaSKit integration for Django, FastAPI, and Flask. All three use `scalekit-sdk-python` and share the same SDK methods, but differ in session handling and middleware patterns.
 
 ## Common setup
 
@@ -9,7 +9,7 @@ pip install scalekit-sdk-python python-dotenv
 ```
 
 ```env
-SCALEKIT_ENV_URL=https://your-env.scalekit.com
+SCALEKIT_ENVIRONMENT_URL=https://your-env.scalekit.com
 SCALEKIT_CLIENT_ID=your_client_id
 SCALEKIT_CLIENT_SECRET=your_client_secret
 SCALEKIT_REDIRECT_URI=http://localhost:8000/auth/callback
@@ -25,7 +25,7 @@ All frameworks use the same SDK under the hood:
 from scalekit import ScalekitClient
 
 client = ScalekitClient(
-    env_url=os.getenv('SCALEKIT_ENV_URL'),
+    env_url=os.getenv('SCALEKIT_ENVIRONMENT_URL'),
     client_id=os.getenv('SCALEKIT_CLIENT_ID'),
     client_secret=os.getenv('SCALEKIT_CLIENT_SECRET'),
 )

@@ -61,9 +61,10 @@ def validate_and_extract_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         access_token = decrypt(request.cookies.get('accessToken'))
-        if not scalekit_client.validate_access_token(access_token):
+        try:
+            claims = scalekit_client.validate_access_token_and_get_claims(access_token)
+        except Exception:
             return jsonify({'error': 'Invalid or expired token'}), 401
-        claims = scalekit_client.decode_access_token(access_token)
         request.user = {
             'id': claims.get('sub'),
             'organization_id': claims.get('oid'),
