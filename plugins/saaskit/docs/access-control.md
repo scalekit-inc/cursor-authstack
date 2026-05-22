@@ -26,9 +26,9 @@ Scalekit embeds `roles` and `permissions` in the access token. After validating 
 const validateAndExtractAuth = async (req, res, next) => {
   try {
     const accessToken = decrypt(req.cookies.accessToken);
-    if (!(await scalekit.validateAccessToken(accessToken)))
+    const claims = await scalekit.validateAccessTokenAndGetClaims(accessToken);
+    if (!claims)
       return res.status(401).json({ error: 'Invalid or expired token' });
-    const claims = decodeToken(accessToken);
     req.user = {
       id: claims.sub,
       organizationId: claims.oid,
