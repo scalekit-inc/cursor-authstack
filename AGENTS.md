@@ -27,104 +27,49 @@ plugins/<plugin-name>/
   agents/                       Optional: custom sub-agents
   rules/                        Optional: Cursor rules (.mdc files with frontmatter)
   commands/                     Optional: slash commands
-  .mcp.json                     Optional: MCP server configuration
+  mcp.json                      Optional: MCP server configuration
+  hooks/hooks.json               Optional: lifecycle hooks
 ```
 
 ## Plugins
 
-### mcp-auth
+### agentkit
 
-OAuth 2.1 authorization for MCP servers using Scalekit.
-
-Skills:
-- `add-mcp-auth` — adds OAuth 2.1 auth to any MCP server
-- `mcp-auth-expressjs-scalekit` — Express.js MCP server with OAuth
-- `mcp-auth-fastapi-fastmcp-scalekit` — FastAPI + FastMCP with OAuth
-- `mcp-auth-fastmcp-scalekit` — FastMCP with Scalekit provider
-- `production-readiness-scalekit` — MCP auth production readiness checklist
-
-Agents: `setup-auth.md`, `validate-mcp-auth.md`
-
-Rules: `mcp-oauth-discovery.mdc`, `mcp-scope-authorization.mdc`, `mcp-secrets-hygiene.mdc`, `mcp-token-validation.mdc`, `no-secrets.mdc`
-
-### agent-auth
-
-Implements Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users.
+Authentication for AI agents. OAuth flows, token vault, 100+ connectors, tool discovery, and live testing.
 
 Skills:
-- `agent-auth` — integrates Scalekit Agent Auth (OAuth flows, token storage, auto-refresh)
-- `building-agent-mcp-server` — creates Scalekit MCP servers with authenticated tool access
-- `production-readiness-scalekit` — agent auth production readiness checklist
+- `integrating-agentkit` — core integration: SDK setup, connected accounts, OAuth flows, token fetching, agent frameworks
+- `discovering-connector-tools` — live tool metadata discovery, schema inspection, tool set narrowing
+- `exposing-agentkit-via-mcp` — expose AgentKit tools through MCP for compatible runtimes
+- `production-readiness-agentkit` — production readiness checklist for AgentKit integrations
 
-Agents: `setup-scalekit.md`
+Rules: `terminology.mdc`, `live-metadata-first.mdc`, `tool-selection.mdc`
 
-Rules: `oauth-security.mdc`
+References: `connected-accounts.md`, `code-samples.md`, `connectors.md`, `connections.md`, `byoc.md`, `redirects.md`, `tool-discovery.md`
 
-References: `agent-connectors/` (connector-specific docs), `connected-accounts.md`, `code-samples.md`, `providers.md`, `connections.md`, `byoc.md`, `redirects.md`
+### saaskit
 
-### full-stack-auth
-
-Production-ready authentication flows using Scalekit full-stack auth across common stacks.
-
-Skills:
-- `full-stack-auth` — complete auth flow (sign-up, login, logout, sessions)
-- `implementing-scalekit-nextjs-auth` — Next.js App Router integration
-- `implementing-scalekit-django-auth` — Django integration
-- `implementing-scalekit-fastapi-auth` — FastAPI integration
-- `implementing-scalekit-flask-auth` — Flask integration
-- `implementing-scalekit-go-auth` — Go (Gin) integration
-- `implementing-scalekit-springboot-auth` — Spring Boot integration
-- `implementing-scalekit-laravel-auth` — Laravel integration
-- `implement-logout` — complete logout flows across stacks
-- `implementing-access-control` — RBAC and permission checks
-- `implementing-admin-portal` — self-serve SSO/SCIM customer portal
-- `adding-api-key-auth` — API key creation, validation, and revocation
-- `adding-oauth2-to-apis` — OAuth 2.0 client-credentials for machine-to-machine auth
-- `manage-user-sessions` — secure session storage and token refresh
-- `migrating-to-scalekit-auth` — incremental migration from existing auth
-- `production-readiness-scalekit` — production readiness checklist
-
-Agents: `setup-scalekit.md`, `sdk-version-advisor.md`, `session-management-reviewer.md`, `scalekit-mcp-helper.md`
-
-Commands: `dryrun.md`
-
-Rules: `web-auth-security.mdc`
-
-References: `redirects.md`, `scalekit-logs.md`, `scalekit-user-profiles.md`
-
-### modular-sso
-
-Modular SSO flows using Scalekit for apps with existing user management.
+Production-ready auth for B2B SaaS apps. Login, sessions, SSO, SCIM, MCP server auth.
 
 Skills:
-- `modular-sso` — complete SSO and authentication flows, IdP-initiated login, enterprise onboarding
-- `implementing-admin-portal` — self-serve SSO configuration portal
-- `production-readiness-scalekit` — SSO production readiness checklist
+- `implementing-saaskit` — core auth flow: login, signup, callback, token exchange, session management, logout
+- `implementing-modular-sso` — enterprise SSO (SAML/OIDC) with 20+ IdPs, admin portal, JIT provisioning
+- `implementing-scim-provisioning` — SCIM 2.0 webhooks, user/group lifecycle, directory API
+- `adding-mcp-oauth` — OAuth 2.1 for MCP servers (FastMCP, Express, FastAPI reference files included)
+- `adding-api-auth` — API keys and client credentials for machine-to-machine auth
+- `implementing-access-control` — RBAC and permission enforcement using token claims
+- `implementing-saaskit-nextjs` — Next.js App Router integration
+- `implementing-saaskit-python` — Django, FastAPI, Flask integration
+- `managing-saaskit-sessions` — token storage, validation, refresh, revocation
+- `migrating-to-saaskit` — migration planner from existing auth systems
+- `testing-auth-setup` — validates auth config with the dryrun CLI
+- `production-readiness-saaskit` — unified production checklist across all SaaSKit domains
 
-Agents: `setup-scalekit.md`, `sso-validate.md`
+Agents: `setup-scalekit.md`, `scalekit-mcp-auth-troubleshooter.md`
 
-Commands: `dryrun-sso.md`
+Rules: `terminology.mdc`, `redirect-urls.mdc`
 
-Rules: `sso-security.mdc`
-
-References: `redirects.md`
-
-### modular-scim
-
-SCIM webhook provisioning with Scalekit for real-time user and group lifecycle management.
-
-Skills:
-- `modular-scim` — SCIM user provisioning via Scalekit's Directory API and webhooks
-- `implementing-admin-portal` — self-serve SCIM configuration portal
-- `production-readiness-scalekit` — SCIM production readiness checklist
-
-Agents: `setup-scalekit.md`, `scim-validate.md`
-
-Commands: `dryrun-scim.md`
-
-Rules: `scim-security.mdc`
-
-References: `redirects.md`
+References: `bring-your-own-auth.md`, `redirects.md`, `scalekit-logs.md`, `scalekit-mcp-server.md`, `scalekit-user-profiles.md`, `session-management-patterns.md`
 
 ## Non-negotiable rules
 
@@ -172,7 +117,7 @@ Context budget:
 
 ## MCP rules
 
-- `.mcp.json` must use environment variables for secrets, never inline credentials.
+- `mcp.json` must use environment variables for secrets, never inline credentials.
 - Tools must be outcome-focused and handle common failures inside the tool.
 - Validate all tool inputs at boundaries.
 

@@ -1,0 +1,27 @@
+---
+description: Enforce correct redirect URL handling in all OAuth and OIDC flows.
+globs:
+alwaysApply: true
+---
+
+# Redirect URL Rules
+
+All OAuth and OIDC flows in Scalekit require registered redirect URLs.
+
+## Rules
+
+- The `redirect_uri` parameter in authorization requests must exactly match a URL registered in the Scalekit dashboard.
+- Register both development (`http://localhost:*`) and production (`https://`) redirect URLs.
+- The `post_logout_redirect_uri` must also be allowlisted in the dashboard under Post Logout URLs.
+- Never use wildcard redirect URLs in production.
+
+## Common mistakes
+
+- Trailing slash mismatch: `https://app.com/callback` vs `https://app.com/callback/`.
+- Scheme mismatch: `http://` registered but `https://` used in code (or vice versa).
+- Port mismatch in development: registering `:3000` but the app runs on `:3001`.
+
+## Where to configure
+
+Scalekit Dashboard → Settings → Redirect URLs (for auth callbacks)
+Scalekit Dashboard → Settings → Post Logout URLs (for logout redirects)

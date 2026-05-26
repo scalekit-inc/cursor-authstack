@@ -2,8 +2,8 @@
 
 <img src="./images/scalekit.jpg" alt="Scalekit" height="64">
 
-<p><strong>Scalekit Auth Plugins for Cursor — the auth stack for agents.</strong><br>
-Add SSO, SCIM, MCP Auth, agent auth, and tool-calling from your Cursor editor.</p>
+<p><strong>Scalekit Auth Stack for Cursor — AgentKit and SaaSKit plugins.</strong><br>
+Add agent auth, tool calling, SSO, SCIM, MCP auth, and session management from Cursor.</p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/scalekit-inc/cursor-authstack/pulls)
@@ -14,27 +14,24 @@ Add SSO, SCIM, MCP Auth, agent auth, and tool-calling from your Cursor editor.</
 
 ---
 
-A Cursor plugin marketplace that brings production-ready authentication to your existing projects — right from inside Cursor.
+Setting up auth for B2B and AI apps is complex. Between agent OAuth flows, SSO providers, SCIM provisioning, MCP server auth, and session management, most developers spend weeks on auth instead of shipping features.
 
-Pick the auth you need: MCP auth, SSO, SCIM provisioning, agent auth, or full-stack authentication — and let Cursor's agent do the wiring for you.
+This marketplace adds the complete Scalekit auth stack to your projects — whether that's an AI agent, a B2B SaaS app, or an MCP server — directly from Cursor.
 
 ---
 
-### Plugins
+### Available Plugins
 
-| Plugin | What it does | Status |
-|--------|--------------|--------|
-| `mcp-auth` | OAuth 2.1 authorization for MCP servers — discovery endpoint, token validation, scope enforcement | Available |
-| `agent-auth` | Scalekit Agent Auth so AI agents can act in third-party apps (Gmail, Slack, Calendar, Notion) on behalf of users | Available |
-| `full-stack-auth` | Full-stack web authentication — login pages, sessions, protected routes, RBAC, and more | Available |
-| `modular-sso` | Enterprise SSO with 20+ identity providers (Okta, Entra ID, JumpCloud) via SAML/OIDC | Available |
-| `modular-scim` | SCIM 2.0 user provisioning, group sync, and directory lifecycle management | Available |
+| Plugin | Description |
+|--------|-------------|
+| **AgentKit** | Authentication for AI agents. OAuth flows, token vault, 100+ connectors (Gmail, Slack, Salesforce, etc.), tool discovery, and live testing — so agents can act on behalf of users. |
+| **SaaSKit** | Production-ready auth for B2B SaaS apps. Login, sessions, SSO (Okta, Azure AD, Google), SCIM provisioning, RBAC, MCP server auth, and API key management. |
 
 ---
 
 ### Installation
 
-The plugin bundle is currently **under review for the [Cursor Marketplace](https://cursor.com/marketplace)**. Once approved, you you will be able to install it directly from the Cursor plugin panel in a single click.
+The plugin bundle is currently **under review for the [Cursor Marketplace](https://cursor.com/marketplace)**. Once approved, you will be able to install it directly from the Cursor plugin panel in a single click.
 
 Until then, use the bootstrap installer:
 
@@ -73,43 +70,18 @@ If you prefer a manual install, each plugin can also be copied into `~/.cursor/p
 
 ---
 
-### Plugin Details
+### Repository Structure
 
-#### mcp-auth
-
-The `mcp-auth` plugin adds production-ready OAuth 2.1 authorization to any MCP server. Once installed, Cursor's agent will:
-
-- Serve a `/.well-known/oauth-protected-resource` discovery endpoint so MCP clients (Claude Desktop, Cursor, VS Code) can automatically find your authorization server
-- Add a Bearer token validation middleware that checks audience, issuer, expiry, and scopes before any MCP tool runs
-- Wire up per-tool scope enforcement so each tool only executes for users with the right permissions
-- Support both **Node.js** (Express / FastMCP) and **Python** (FastAPI / FastMCP) out of the box
-
-This plugin uses [Scalekit](https://docs.scalekit.com/authenticate/mcp/start-mcp-auth-coding-agents/) as the OAuth 2.1 authorization server.
-
-#### agent-auth
-
-The `agent-auth` plugin implements Scalekit Agent Auth — so your AI agents can act on behalf of users in Gmail, Slack, Notion, Google Calendar, and 40+ other connected services.
-
-Skills:
-- `agent-auth` — integrates Scalekit Agent Auth with OAuth flows and automatic token refresh
-- `building-agent-mcp-server` — creates a Scalekit MCP server with multi-service tool access
-- `production-readiness-scalekit` — production readiness checklist for agent OAuth flows
-
-#### full-stack-auth
-
-The `full-stack-auth` plugin adds end-to-end authentication to B2B and AI apps using Scalekit. One integration enables: social sign-in, magic links, enterprise SSO, workspaces, MCP authentication, SCIM provisioning, and user management.
-
-Skills for major stacks: Next.js, Django, FastAPI, Flask, Go (Gin), Spring Boot, Laravel.
-
-Additional skills: logout, access control, admin portal, API key auth, OAuth2 for APIs, session management, auth migration, and production readiness.
-
-#### modular-sso
-
-The `modular-sso` plugin integrates enterprise SSO with existing user management systems. It handles IdP-initiated and SP-initiated login, attribute mapping, JIT provisioning, and enterprise customer onboarding via the admin portal.
-
-#### modular-scim
-
-The `modular-scim` plugin adds SCIM 2.0 directory sync to applications. It handles real-time user provisioning, deprovisioning, and group membership changes from enterprise identity providers.
+```
+.
+├── plugins/
+│   ├── agentkit/         # AI agent authentication (AgentKit)
+│   └── saaskit/          # B2B SaaS authentication (SaaSKit)
+├── images/               # Documentation images
+├── scripts/              # Install scripts
+├── AGENTS.md             # Contribution guidelines
+└── LICENSE               # MIT License
+```
 
 ---
 
@@ -119,6 +91,8 @@ The `modular-scim` plugin adds SCIM 2.0 directory sync to applications. It handl
 - Cursor installed and configured
 - Project where you want to add authentication
 
+> **Windows**: install.sh requires macOS or Linux (or WSL on Windows). Native Windows PowerShell install is not yet supported.
+
 ---
 
 ### Helpful Links
@@ -126,9 +100,9 @@ The `modular-scim` plugin adds SCIM 2.0 directory sync to applications. It handl
 #### Documentation
 
 - [Scalekit Documentation](https://docs.scalekit.com) — Complete guides and API reference
-- [SSO Quickstart](https://docs.scalekit.com/sso/quickstart/) — Implement enterprise SSO
-- [MCP Auth Guide](https://docs.scalekit.com/mcp-auth/quickstart/) — Secure MCP servers
-- [Agent Auth Guide](https://docs.scalekit.com/agent-auth/quickstart/) — Authentication for AI agents
+- [Modular SSO guide](https://docs.scalekit.com/authenticate/sso/add-modular-sso/) — Implement enterprise SSO
+- [MCP Auth guide](https://docs.scalekit.com/authenticate/mcp/quickstart/) — Secure MCP servers
+- [AgentKit overview](https://docs.scalekit.com/agentkit/overview) — Connect agents to authenticated tools
 
 #### Resources
 

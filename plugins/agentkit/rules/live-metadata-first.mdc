@@ -1,0 +1,25 @@
+---
+description: Treat live AgentKit metadata as the source of truth for tool names, schemas, and connector coverage.
+globs:
+alwaysApply: true
+---
+
+# Live Metadata First
+
+Treat live AgentKit metadata as the source of truth for:
+
+- tool names
+- connector coverage
+- `input_schema`
+- `output_schema`
+
+## Implications
+
+- Static connector notes are not exhaustive.
+- Example code is not a catalog.
+- Schema discovery should happen before guessing tool inputs.
+- When credentials are available, prefer live lookup over prose documentation.
+
+## Fallback behavior
+
+If live credentials are unavailable, docs can still guide setup and workflow design, but they must be presented as directional guidance rather than guaranteed current truth.

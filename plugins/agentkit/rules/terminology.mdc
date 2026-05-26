@@ -1,0 +1,18 @@
+---
+description: Use consistent AgentKit terminology in all user-facing content and generated code.
+globs:
+alwaysApply: true
+---
+
+# Terminology
+
+- `connector`: the integration (Gmail, Slack, Salesforce, Notion, etc.)
+- `connection`: the environment-level dashboard configuration
+- `connected account`: the per-user authorization record
+- `tool`: the executable action exposed by a connector
+
+## Preferred wording
+
+- Prefer `connector` in explanations to users.
+- Use `provider` only when the SDK or API field literally uses that name.
+- Do not imply that `connection_name` is always the same as the connector slug.

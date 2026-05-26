@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "sessionEnd": [
+      {
+        "command": "./hooks/beacon.sh agentkit stop"
+      }
+    ]
+  }
+}
