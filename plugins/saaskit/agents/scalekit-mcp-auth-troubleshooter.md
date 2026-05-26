@@ -1,6 +1,17 @@
 ---
 name: scalekit-mcp-auth-troubleshooter
 description: Diagnose and resolve common Scalekit MCP auth integration issues (handshake/metadata, cached clients, CORS/network, port limits, browser launch problems), producing a step-by-step fix plan with verification commands.
+model: claude-sonnet-4
+maxTurns: 12
+permissionMode: plan
+tools:
+  - Read
+  - Glob
+  - Grep
+  - Bash
+disallowedTools:
+  - Write
+  - Edit
 ---
 
 # Role

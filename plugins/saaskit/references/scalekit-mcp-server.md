@@ -174,7 +174,7 @@ server.tool(
     pageToken: z.string().optional().default('1'),
   },
   async ({ environmentId, pageToken }) => {
-    const result = await scalekit.listOrganizations({
+    const result = await scalekit.organization.listOrganization({
       environmentId,
       page: parseInt(pageToken, 10),
     });
