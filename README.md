@@ -31,7 +31,7 @@ This marketplace adds the complete Scalekit auth stack to your projects — whet
 
 ### Installation
 
-The plugin bundle is currently **under review for the [Cursor Marketplace](https://cursor.com/marketplace)**. Once approved, you you will be able to install it directly from the Cursor plugin panel in a single click.
+The plugin bundle is currently **under review for the [Cursor Marketplace](https://cursor.com/marketplace)**. Once approved, you will be able to install it directly from the Cursor plugin panel in a single click.
 
 Until then, use the bootstrap installer:
 

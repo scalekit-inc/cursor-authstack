@@ -25,7 +25,7 @@ This doc covers Modular SSO and the admin portal for customer self-serve configu
 ```js
 // Node.js
 const authUrl = scalekit.getAuthorizationUrl(redirectUri, {
-  organizationId: 'org_15421144869927830',
+  organizationId: 'org_XXXXX',
 });
 res.redirect(authUrl);
 ```
@@ -33,7 +33,7 @@ res.redirect(authUrl);
 ```python
 # Python
 options = AuthorizationUrlOptions()
-options.organization_id = 'org_15421144869927830'
+options.organization_id = 'org_XXXXX'
 auth_url = scalekit_client.get_authorization_url(redirect_uri, options=options)
 ```
 
