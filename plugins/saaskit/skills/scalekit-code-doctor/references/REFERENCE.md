@@ -30,7 +30,7 @@ scalekit_client = ScalekitClient(
 )
 ```
 
-### Go (`github.com/scalekit-inc/scalekit-sdk-go`)
+### Go (`github.com/scalekit-inc/scalekit-sdk-go/v2`)
 
 ```go
 import scalekit "github.com/scalekit-inc/scalekit-sdk-go/v2"
@@ -103,6 +103,7 @@ Note: The REST API docs use `SCALEKIT_ENVIRONMENT_URL` in some examples. Both `S
 | `authenticate_with_code` | `(code: str, redirect_uri: str, options?: CodeAuthenticationOptions) → dict` | Tokens + user info |
 | `get_idp_initiated_login_claims` | `(idp_initiated_login_token: str, options?: TokenValidationOptions) → IdpInitiatedLoginClaims` | IDP login claims |
 | `validate_access_token` | `(token: str, options?: TokenValidationOptions) → bool` | Boolean |
+| `validate_access_token_and_get_claims` | `(token: str, options?: TokenValidationOptions) → dict` | Decoded claims dict (raises on invalid/expired) — **canonical method when you need claims** |
 | `get_logout_url` | `(options?: LogoutUrlOptions) → str` | Logout URL string |
 | `refresh_access_token` | `(refresh_token: str) → dict` | New tokens |
 | `verify_webhook_payload` | `(secret: str, headers: Dict[str, str], payload: str\|bytes) → bool` | Boolean |

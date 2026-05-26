@@ -10,7 +10,7 @@ After authentication is working and the app must authorize access to routes/acti
 
 ## Workflow
 1. Validate the access token (expiry, issuer/audience as applicable) and then decode it to extract `sub`, `oid`, `roles`, and `permissions`.
-2. Attach a normalized auth context to the request (ele: `req.user = { id, organizationId, roles, permissions }`) so downstream handlers can authorize consistently.
+2. Attach a normalized auth context to the request (e.g., `req.user = { id, organizationId, roles, permissions }`) so downstream handlers can authorize consistently.
 3. Enforce authorization at route boundaries using (a) role checks for broad access patterns and (b) permission checks for fine-grained actions (often `resource:action`).
 4. Combine checks when needed (examples: "admin bypass", "resource ownership", time-based restrictions for sensitive operations).
 5. Never rely on client-side authorization alone; enforce roles/permissions server-side.
@@ -27,7 +27,7 @@ const validateAndExtractAuth = async (req, res, next) => {
   try {
     const accessToken = decrypt(req.cookies.accessToken); // if encrypted
     const tokenData = await scalekit.validateAccessTokenAndGetClaims(accessToken);
-    if (!tokenData) return res.status(401).json({ error: "Invalid or expired token" });
+    if (!tokenData) return res.status(401).json({ error: "Unauthorized" });
     req.user = {
       id: tokenData.sub,
       organizationId: tokenData.oid,
