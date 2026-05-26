@@ -1,5 +1,5 @@
 ---
-name: scalekit-setup
+name: setup-scalekit
 description: Sets up Scalekit env vars, installs/initializes the SDK, and verifies credentials by listing organizations. Use proactively when user asks to set up, install, initialize, configure, or verify Scalekit.
 ---
 

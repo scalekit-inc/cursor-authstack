@@ -1,5 +1,5 @@
 {
-  "name": "scalekit-authstack",
+  "name": "scalekit-auth-stack",
   "owner": {
     "name": "Scalekit Inc",
     "email": "support@scalekit.com"
@@ -15,7 +15,7 @@
       "source": "agentkit",
       "description": "Authentication for AI agents. OAuth flows, token vault, 100+ connectors (Gmail, Slack, Salesforce, etc.), tool discovery, and live testing — so agents can act on behalf of users.",
       "category": "agent auth",
-      "homepage": "https://docs.scalekit.com/agentkit/overview.md",
+      "homepage": "https://docs.scalekit.com/agentkit/overview",
       "logo": "../assets/logo.svg"
     },
     {
