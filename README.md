@@ -1,3 +1,12 @@
+> [!WARNING]
+> **This repository is archived and no longer maintained.** The Scalekit plugins for Cursor now live in [scalekit-inc/authstack](https://github.com/scalekit-inc/authstack). Install them with:
+>
+> ```bash
+> npx @scalekit-inc/cli setup cursor
+> ```
+>
+> The content below is out of date. It uses older names (Agent Auth, `SCALEKIT_ENV_URL`, `/agent-auth/` docs links). Follow [docs.scalekit.com](https://docs.scalekit.com) instead.
+
 <div align="center">
 
 <img src="./images/scalekit.jpg" alt="Scalekit" height="64">
